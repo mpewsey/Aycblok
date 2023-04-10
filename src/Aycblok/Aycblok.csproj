@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<AssemblyName>MPewsey.Aycblok</AssemblyName>
+	<AssemblyTitle>MPewsey.Aycblok</AssemblyTitle>
+	<RootNamespace>MPewsey.Aycblok</RootNamespace>
+	<PackageId>MPewsey.Aycblok</PackageId>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Matt Pewsey</Authors>
+    <Company>Matt Pewsey</Company>
+    <Copyright>Copyright © 2023</Copyright>
+    <Description>Procedural generation of sliding ice block puzzles.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/mpewsey/Aycblok</RepositoryUrl>
+    <PackageTags>procedural-generation;videogames</PackageTags>
+    <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+	<VersionPrefix>0.0.1</VersionPrefix>
+	<Configurations>Debug;Release</Configurations>
+	<PackageProjectUrl>https://github.com/mpewsey/Aycblok</PackageProjectUrl>
+	<GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Generators\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MPewsey.Common" Version="0.0.4" />
+  </ItemGroup>
+
+</Project>
