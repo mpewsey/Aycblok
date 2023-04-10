@@ -33,7 +33,7 @@ Move 3:              Move 4:              Move 5:
 ## Features
 
 * Ice push block puzzle generation for a tile area.
-* Input tile areas can have their cells coded to add confining geometry to add challenge or visual interest.
+* Input tile areas can have their cells flagged to add confining geometry to add challenge or visual interest.
 * Support of multiple push blocks in a single puzzle area, which can interact and stop or block each other.
 * Support of area obstacles such a holes by means of void tiles, which disallow traversal of a cell by the player, the push blocks, or both.
 * Includes a random garbage block generator to clutter the area and make the solution path less obvious.
