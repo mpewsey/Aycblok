@@ -2,7 +2,7 @@
 
 Aycblok (pronounced "ice block," but cooler) is a sliding ice block puzzle generator. These puzzles are similar to the ice platform puzzles of the Ice Cavern of _The Legend of Zelda: Ocarina of Time_ or the orb puzzles of _Chained Echoes_.
 
-The aim of the puzzles is for a player to slide all push blocks onto a goal tile. Once pushed, the push blocks slide until they are stopped by an obstacle: either a permanent stop block, a break block that is removed when hit, or another push block. The player can move freely within non-obstacle or non-player void cells and must be positioned directly next to a push block in order to push it in one of the cardinal directions.
+The aim of the puzzles is for a player character to slide all push blocks onto a goal tile. Once pushed, the push blocks slide until they are stopped by an obstacle: either a permanent stop block, a break block that is removed when hit, or another push block. The player can move freely within non-obstacle or non-player void cells and must be positioned directly next to a push block in order to push it in one of the cardinal directions.
 
 The following is a move-by-move report as acquired for one such generated puzzle:
 
