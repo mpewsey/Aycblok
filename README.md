@@ -1,8 +1,8 @@
 # Aycblok
 
-Aycblok - pronounced "ice block," but cooler - is an ice push block puzzle generator. These puzzles are similar to the ice platform puzzles of the Ice Cavern of _Zelda: Ocarina of Time_ or the orb puzzles of _Chained Echoes_.
+Aycblok (pronounced "ice block," but cooler) is a sliding ice block puzzle generator. These puzzles are similar to the ice platform puzzles of the Ice Cavern of _The Legend of Zelda: Ocarina of Time_ or the orb puzzles of _Chained Echoes_.
 
-The aim of the puzzles is for a player to slide all push blocks onto a goal tile. However, once pushed, the push blocks will slide, frictionlessly as though on ice, until they are stopped by an obstacle: either a permanent stop block or a break block, which will be removed when hit.
+The aim of the puzzles is for a player to slide all push blocks onto a goal tile. Once pushed, the push blocks slide until they are stopped by an obstacle: either a permanent stop block, a break block that is removed when hit, or another push block. The player can move freely within non-obstacle or non-player void cells and must be positioned directly next to a push block in order to push it in one of the cardinal directions.
 
 The following is a move-by-move report as acquired for one such generated puzzle:
 
@@ -36,7 +36,7 @@ Move 3:              Move 4:              Move 5:
 * Input tile areas can have their cells flagged to add confining geometry to add challenge or visual interest.
 * Support of multiple push blocks in a single puzzle area, which can interact and stop or block each other.
 * Support of area obstacles such a holes by means of void tiles, which disallow traversal of a cell by the player, the push blocks, or both.
-* Includes a random garbage block generator to clutter the area and make the solution path less obvious.
+* Includes a random garbage block generator to clutter the area and make the solution less obvious.
 * Customizable parameters for generation steps to help adjust the feel and difficulty of puzzles.
 
 ## Generation Pipeline Example
