@@ -25,7 +25,7 @@ namespace MPewsey.Aycblok
         [EnumMember] BlockVoid = 1 << 4,
         /// Cell does not permit the pusher to traverse it.
         [EnumMember] PusherVoid = 1 << 5,
-        /// Cell it out of bounds.
+        /// Cell is out of bounds.
         [EnumMember] OutOfBounds = 1 << 6,
         /// Cell contains a garbage block.
         [EnumMember] Garbage = 1 << 7,
