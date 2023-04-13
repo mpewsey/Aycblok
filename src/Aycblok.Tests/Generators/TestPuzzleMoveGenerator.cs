@@ -1,15 +1,46 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MPewsey.Common.Collections;
 using MPewsey.Common.Logging;
+using MPewsey.Common.Mathematics;
+using MPewsey.Common.Pipelines;
 using MPewsey.Common.Random;
 using MPewsey.Common.Serialization;
 using System;
+using System.Collections.Generic;
 
 namespace MPewsey.Aycblok.Generators.Tests
 {
     [TestClass]
     public class TestPuzzleMoveGenerator
     {
+        [TestMethod]
+        public void TestPipelineGenerateSmallLayout()
+        {
+            Logger.RemoveAllListeners();
+            Logger.AddListener(Console.WriteLine);
+            var seed = new RandomSeed(12345);
+            var area = new Array2D<Cell>(9, 9);
+
+            var args = new Dictionary<string, object>
+            {
+                { "PuzzleArea", area },
+                { "RandomSeed", seed },
+            };
+
+            var pipeline = new Pipeline(
+                new PuzzleGoalGenerator(Vector2DInt.One),
+                new PuzzleMoveGenerator(1, 8),
+                new PuzzleGarbageGenerator(0.1f, 0.5f)
+            );
+
+            var results = pipeline.Generate(args);
+            var layout = results.GetOutput<PuzzleLayout>("PuzzleLayout");
+            Assert.IsNotNull(layout);
+
+            Console.WriteLine(layout.GetTiledMoveReport(3));
+            Logger.RemoveAllListeners();
+        }
+
         [DataTestMethod]
         [DataRow(12345)]
         [DataRow(56789)]

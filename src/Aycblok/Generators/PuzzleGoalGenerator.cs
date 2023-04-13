@@ -75,10 +75,10 @@ namespace MPewsey.Aycblok.Generators
         /// <param name="randomSeed">The random seed.</param>
         public Array2D<Cell> GenerateGoal(Array2D<Cell> puzzleArea, RandomSeed randomSeed)
         {
-            Logger.Log("Generating puzzle goals...");
+            Logger.Log("[Puzzle Goal Generator] Generating puzzle goals...");
             Initialize(puzzleArea, randomSeed);
             AddGoal();
-            Logger.Log("Goal generation complete.");
+            Logger.Log("[Puzzle Goal Generator] Goal generation complete.");
             return PuzzleArea;
         }
 

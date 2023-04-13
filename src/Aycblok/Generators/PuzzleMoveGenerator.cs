@@ -118,7 +118,7 @@ namespace MPewsey.Aycblok.Generators
         /// <param name="randomSeed">The random seed.</param>
         public PuzzleLayout GenerateLayout(Array2D<Cell> cells, RandomSeed randomSeed)
         {
-            Logger.Log("Generating puzzle moves...");
+            Logger.Log("[Puzzle Move Generator] Generating puzzle moves...");
             Initialize(randomSeed);
 
             for (int i = 1; i <= MaxIterations; i++)
@@ -129,14 +129,14 @@ namespace MPewsey.Aycblok.Generators
                 if (AddMoves())
                 {
                     Layout.Moves.Reverse();
-                    Logger.Log($"Puzzle move generation complete in {i} attempts.");
+                    Logger.Log($"[Puzzle Move Generator] Puzzle move generation complete in {i} attempts.");
                     return Layout;
                 }
 
-                Logger.Log("Target moves not met. Restarting...");
+                Logger.Log("[Puzzle Move Generator] Target moves not met. Restarting...");
             }
 
-            Logger.Log("Failed to generate puzzle moves.");
+            Logger.Log("[Puzzle Move Generator] Failed to generate puzzle moves.");
             return null;
         }
 

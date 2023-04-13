@@ -77,10 +77,10 @@ namespace MPewsey.Aycblok.Generators
         /// <param name="randomSeed">The random seed.</param>
         public void GenerateGarbage(PuzzleLayout layout, RandomSeed randomSeed)
         {
-            Logger.Log("Generating garbage blocks...");
+            Logger.Log("[Puzzle Garbage Generator] Generating garbage blocks...");
             Initialize(layout, randomSeed);
             AddGarbage();
-            Logger.Log("Garbage block generation complete.");
+            Logger.Log("[Puzzle Garbage Generator] Garbage block generation complete.");
         }
 
         /// <summary>
