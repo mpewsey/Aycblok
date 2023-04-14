@@ -22,7 +22,7 @@ namespace MPewsey.Aycblok.Generators
         /// <summary>
         /// The puzzle area.
         /// </summary>
-        private Array2D<Cell> PuzzleArea { get; set; }
+        private Array2D<PuzzleTile> PuzzleArea { get; set; }
 
         /// <summary>
         /// The random seed.
@@ -43,9 +43,9 @@ namespace MPewsey.Aycblok.Generators
         /// </summary>
         /// <param name="puzzleArea">The base puzzle area.</param>
         /// <param name="randomSeed">The random seed.</param>
-        private void Initialize(Array2D<Cell> puzzleArea, RandomSeed randomSeed)
+        private void Initialize(Array2D<PuzzleTile> puzzleArea, RandomSeed randomSeed)
         {
-            PuzzleArea = new Array2D<Cell>(puzzleArea);
+            PuzzleArea = new Array2D<PuzzleTile>(puzzleArea);
             RandomSeed = randomSeed;
         }
 
@@ -63,7 +63,7 @@ namespace MPewsey.Aycblok.Generators
         public bool ApplyStep(PipelineResults results)
         {
             var randomSeed = results.GetArgument<RandomSeed>("RandomSeed");
-            var puzzleArea = results.GetArgument<Array2D<Cell>>("PuzzleArea");
+            var puzzleArea = results.GetArgument<Array2D<PuzzleTile>>("PuzzleArea");
             results.SetOutput("PuzzleArea", GenerateGoal(puzzleArea, randomSeed));
             return true;
         }
@@ -73,7 +73,7 @@ namespace MPewsey.Aycblok.Generators
         /// </summary>
         /// <param name="puzzleArea">The base puzzle area.</param>
         /// <param name="randomSeed">The random seed.</param>
-        public Array2D<Cell> GenerateGoal(Array2D<Cell> puzzleArea, RandomSeed randomSeed)
+        public Array2D<PuzzleTile> GenerateGoal(Array2D<PuzzleTile> puzzleArea, RandomSeed randomSeed)
         {
             Logger.Log("[Puzzle Goal Generator] Generating puzzle goals...");
             Initialize(puzzleArea, randomSeed);
@@ -107,7 +107,7 @@ namespace MPewsey.Aycblok.Generators
             {
                 for (int j = 0; j < GoalSize.Y; j++)
                 {
-                    PuzzleArea[position.X + i, position.Y + j] = Cell.Goal;
+                    PuzzleArea[position.X + i, position.Y + j] = PuzzleTile.Goal;
                 }
             }
         }
@@ -142,9 +142,9 @@ namespace MPewsey.Aycblok.Generators
             {
                 for (int j = 0; j < GoalSize.Y; j++)
                 {
-                    var cell = PuzzleArea.GetOrDefault(row + i, column + j, Cell.OutOfBounds);
+                    var tile = PuzzleArea.GetOrDefault(row + i, column + j, PuzzleTile.OutOfBounds);
 
-                    if (cell != Cell.None)
+                    if (tile != PuzzleTile.None)
                         return false;
                 }
             }

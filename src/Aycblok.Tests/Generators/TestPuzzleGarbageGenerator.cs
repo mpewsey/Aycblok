@@ -20,8 +20,8 @@ namespace MPewsey.Aycblok.Generators.Tests
             Logger.AddListener(Console.WriteLine);
 
             var randomSeed = new RandomSeed(seed);
-            var area = new Array2D<Cell>(21, 21);
-            area[10, 10] = Cell.Goal;
+            var area = new Array2D<PuzzleTile>(21, 21);
+            area[10, 10] = PuzzleTile.Goal;
             Console.WriteLine("Starting Area:");
             Console.WriteLine(PuzzleBoard.GetString(area));
 
@@ -29,8 +29,8 @@ namespace MPewsey.Aycblok.Generators.Tests
             var generator = new PuzzleGarbageGenerator(0.5f, 0.5f);
             generator.GenerateGarbage(layout, randomSeed);
             Console.WriteLine(layout.GetMoveReport());
-            Assert.IsTrue(layout.Cells.Array.Contains(Cell.BreakBlock | Cell.Garbage));
-            Assert.IsTrue(layout.Cells.Array.Contains(Cell.StopBlock | Cell.Garbage));
+            Assert.IsTrue(layout.Tiles.Array.Contains(PuzzleTile.BreakBlock | PuzzleTile.Garbage));
+            Assert.IsTrue(layout.Tiles.Array.Contains(PuzzleTile.StopBlock | PuzzleTile.Garbage));
 
             Logger.RemoveAllListeners();
         }

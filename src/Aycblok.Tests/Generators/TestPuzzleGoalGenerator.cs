@@ -21,7 +21,7 @@ namespace MPewsey.Aycblok.Generators.Tests
             Logger.AddListener(Console.WriteLine);
 
             var randomSeed = new RandomSeed(seed);
-            var area = new Array2D<Cell>(21, 21);
+            var area = new Array2D<PuzzleTile>(21, 21);
             Console.WriteLine("Starting Area:");
             Console.WriteLine(PuzzleBoard.GetString(area));
 
@@ -30,7 +30,7 @@ namespace MPewsey.Aycblok.Generators.Tests
             Console.WriteLine("Result:");
             Console.WriteLine(PuzzleBoard.GetString(result));
 
-            Assert.AreEqual(4, result.Array.Count(x => x == Cell.Goal));
+            Assert.AreEqual(4, result.Array.Count(x => x == PuzzleTile.Goal));
             Logger.RemoveAllListeners();
         }
     }

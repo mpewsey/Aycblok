@@ -7,77 +7,77 @@ using System.Text;
 namespace MPewsey.Aycblok
 {
     /// <summary>
-    /// Contains general methods pertaining to areas of cells, or puzzle boards.
+    /// Contains general methods pertaining to areas of tiles, or puzzle boards.
     /// </summary>
     public static class PuzzleBoard
     {
         /// <summary>
         /// Performs a raycast in the specified offset direction until the first blocking layer is met.
         /// </summary>
-        /// <param name="cells">The array of cells.</param>
+        /// <param name="tiles">The array of tiles.</param>
         /// <param name="position">The starting position. This position is not included in the raycast.</param>
         /// <param name="offset">The offset direction.</param>
-        /// <param name="blockingLayers">The cell layers that block the raycast.</param>
+        /// <param name="blockingLayers">The tile layers that block the raycast.</param>
         /// <exception cref="ArgumentException">Raised if a zero vector is supplied as the offset.</exception>
-        public static RaycastHit Raycast(Array2D<Cell> cells, Vector2DInt position, Vector2DInt offset, Cell blockingLayers)
+        public static RaycastHit Raycast(Array2D<PuzzleTile> tiles, Vector2DInt position, Vector2DInt offset, PuzzleTile blockingLayers)
         {
             if (offset == Vector2DInt.Zero)
                 throw new ArgumentException("Offset must be non-zero vector.");
 
-            var cell = Cell.None;
-            blockingLayers |= Cell.OutOfBounds;
+            var tile = PuzzleTile.None;
+            blockingLayers |= PuzzleTile.OutOfBounds;
 
-            while ((cell & blockingLayers) == Cell.None)
+            while ((tile & blockingLayers) == PuzzleTile.None)
             {
                 position += offset;
-                cell = cells.GetOrDefault(position.X, position.Y, Cell.OutOfBounds);
+                tile = tiles.GetOrDefault(position.X, position.Y, PuzzleTile.OutOfBounds);
             }
 
-            return new RaycastHit(cell, position);
+            return new RaycastHit(tile, position);
         }
 
         /// <summary>
         /// Returns the string representation for a puzzle board.
         /// </summary>
-        /// <param name="cells">The puzzle board cells.</param>
-        public static string GetString(Array2D<Cell> cells)
+        /// <param name="tiles">The puzzle board tiles.</param>
+        public static string GetString(Array2D<PuzzleTile> tiles)
         {
-            var size = 2 * cells.Array.Length + cells.Rows;
+            var size = 2 * tiles.Array.Length + tiles.Rows;
             var builder = new StringBuilder(size);
-            AddString(cells, builder);
+            AddString(tiles, builder);
             return builder.ToString();
         }
 
         /// <summary>
         /// Returns the puzzle board strings in a tiled layout.
         /// </summary>
-        /// <param name="cells">A list of move puzzle boards.</param>
+        /// <param name="tiles">A list of move puzzle boards.</param>
         /// <param name="columns">The number of columns in the layout.</param>
-        public static string GetTiledString(IList<Array2D<Cell>> cells, int columns)
+        public static string GetTiledString(IList<Array2D<PuzzleTile>> tiles, int columns)
         {
-            if (cells.Count == 0)
+            if (tiles.Count == 0)
                 return string.Empty;
 
             const int spaceCount = 3;
             columns = Math.Max(columns, 1);
             var builder = new StringBuilder();
-            var width = 2 * cells[0].Columns + spaceCount;
-            var rows = (int)Math.Ceiling(cells.Count / (double)columns);
+            var width = 2 * tiles[0].Columns + spaceCount;
+            var rows = (int)Math.Ceiling(tiles.Count / (double)columns);
 
-            for (int m = 0; m < rows; m++)
+            for (int row = 0; row < rows; row++)
             {
                 // Add headers
-                for (int n = 0; n < columns; n++)
+                for (int column = 0; column < columns; column++)
                 {
-                    var k = m * columns + n;
+                    var index = row * columns + column;
 
-                    if (k >= cells.Count)
+                    if (index >= tiles.Count)
                         break;
 
-                    var header = k == 0 ? "Start board:" : $"Move {k}:";
+                    var header = index == 0 ? "Start board:" : $"Move {index}:";
                     builder.Append(header);
 
-                    if (n < columns - 1)
+                    if (column < columns - 1)
                     {
                         var length = Math.Max(width - header.Length, 0);
                         builder.Append(' ', length);
@@ -86,31 +86,31 @@ namespace MPewsey.Aycblok
 
                 builder.Append('\n');
 
-                // Add cell strings
-                for (int i = 0; i < cells[0].Rows; i++)
+                // Add tile strings
+                for (int i = 0; i < tiles[0].Rows; i++)
                 {
-                    for (int n = 0; n < columns; n++)
+                    for (int column = 0; column < columns; column++)
                     {
-                        var k = m * columns + n;
+                        var index = row * columns + column;
 
-                        if (k >= cells.Count)
+                        if (index >= tiles.Count)
                             break;
 
-                        // Add row cell strings
-                        for (int j = 0; j < cells[0].Columns; j++)
+                        // Add row tile strings
+                        for (int j = 0; j < tiles[0].Columns; j++)
                         {
-                            builder.Append(GetCellCharacter(cells[k][i, j])).Append(' ');
+                            builder.Append(GetTileCharacter(tiles[index][i, j])).Append(' ');
                         }
 
                         // Add separator
-                        if (n < columns - 1)
+                        if (column < columns - 1)
                             builder.Append(' ', spaceCount);
                     }
 
                     builder.Append('\n');
                 }
 
-                if (m < rows - 1)
+                if (row < rows - 1)
                     builder.Append("\n");
             }
 
@@ -118,17 +118,17 @@ namespace MPewsey.Aycblok
         }
 
         /// <summary>
-        /// Adds the cells string to the string builder.
+        /// Adds the tiles string to the string builder.
         /// </summary>
-        /// <param name="cells">The puzzle board cells.</param>
+        /// <param name="tiles">The puzzle board tiles.</param>
         /// <param name="builder">The string builder.</param>
-        public static void AddString(Array2D<Cell> cells, StringBuilder builder)
+        public static void AddString(Array2D<PuzzleTile> tiles, StringBuilder builder)
         {
-            for (int i = 0; i < cells.Rows; i++)
+            for (int i = 0; i < tiles.Rows; i++)
             {
-                for (int j = 0; j < cells.Columns; j++)
+                for (int j = 0; j < tiles.Columns; j++)
                 {
-                    builder.Append(GetCellCharacter(cells[i, j])).Append(' ');
+                    builder.Append(GetTileCharacter(tiles[i, j])).Append(' ');
                 }
 
                 builder.Append('\n');
@@ -136,36 +136,36 @@ namespace MPewsey.Aycblok
         }
 
         /// <summary>
-        /// Returns the character corresponding to the cell.
+        /// Returns the character corresponding to the tile.
         /// </summary>
-        /// <param name="cell">The cell.</param>
-        /// <exception cref="ArgumentException">Raised if the cell value is unhandled.</exception>
-        private static char GetCellCharacter(Cell cell)
+        /// <param name="tile">The tile.</param>
+        /// <exception cref="ArgumentException">Raised if the tile value is unhandled.</exception>
+        private static char GetTileCharacter(PuzzleTile tile)
         {
-            switch (cell)
+            var layers = PuzzleTile.StopBlock | PuzzleTile.BreakBlock | PuzzleTile.PushBlock | PuzzleTile.Goal | PuzzleTile.Void;
+
+            switch (tile & layers)
             {
-                case Cell.None:
+                case PuzzleTile.None:
                     return '.';
-                case Cell.StopBlock:
-                case Cell.StopBlock | Cell.Garbage:
+                case PuzzleTile.StopBlock:
                     return '#';
-                case Cell.BreakBlock:
-                case Cell.BreakBlock | Cell.Garbage:
+                case PuzzleTile.BreakBlock:
                     return '%';
-                case Cell.PushBlock:
+                case PuzzleTile.PushBlock:
                     return 'o';
-                case Cell.Goal:
+                case PuzzleTile.Goal:
                     return '$';
-                case Cell.Goal | Cell.PushBlock:
+                case PuzzleTile.Goal | PuzzleTile.PushBlock:
                     return '*';
-                case Cell.Void:
+                case PuzzleTile.Void:
                     return '!';
-                case Cell.BlockVoid:
+                case PuzzleTile.BlockVoid:
                     return '+';
-                case Cell.PusherVoid:
+                case PuzzleTile.PusherVoid:
                     return '@';
                 default:
-                    throw new ArgumentException($"Unhandled cell type: {cell}.");
+                    throw new ArgumentException($"Unhandled tile type: {tile}.");
             }
         }
     }

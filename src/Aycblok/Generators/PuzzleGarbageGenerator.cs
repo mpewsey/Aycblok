@@ -71,7 +71,7 @@ namespace MPewsey.Aycblok.Generators
         }
 
         /// <summary>
-        /// Adds random garbage blocks to the layout. The added garbage includes the garbage cell layer.
+        /// Adds random garbage blocks to the layout. The added garbage includes the garbage tile layer.
         /// </summary>
         /// <param name="layout">The layout.</param>
         /// <param name="randomSeed">The random seed.</param>
@@ -96,21 +96,21 @@ namespace MPewsey.Aycblok.Generators
             for (int i = 0; i < targetBlocks; i++)
             {
                 var position = positions[i];
-                Layout.Cells[position] |= GetRandomBlock();
+                Layout.Tiles[position] |= GetRandomBlock();
             }
         }
 
         /// <summary>
-        /// Returns an array of cells with move paths marked.
+        /// Returns an array of tiles with move paths marked.
         /// </summary>
-        private Array2D<Cell> GetMarkedCells()
+        private Array2D<PuzzleTile> GetMarkedTiles()
         {
-            var cells = new Array2D<Cell>(Layout.Cells);
+            var tiles = new Array2D<PuzzleTile>(Layout.Tiles);
 
             foreach (var move in Layout.Moves)
             {
-                cells[move.PushCellPosition()] |= Cell.Marked;
-                cells[move.StopCellPosition()] |= Cell.Marked;
+                tiles[move.PushTilePosition()] |= PuzzleTile.Marked;
+                tiles[move.StopTilePosition()] |= PuzzleTile.Marked;
 
                 var min = Vector2DInt.Min(move.FromPosition, move.ToPosition);
                 var max = Vector2DInt.Max(move.FromPosition, move.ToPosition);
@@ -119,12 +119,12 @@ namespace MPewsey.Aycblok.Generators
                 {
                     for (int j = min.Y; j <= max.Y; j++)
                     {
-                        cells[i, j] |= Cell.Marked;
+                        tiles[i, j] |= PuzzleTile.Marked;
                     }
                 }
             }
 
-            return cells;
+            return tiles;
         }
 
         /// <summary>
@@ -132,23 +132,23 @@ namespace MPewsey.Aycblok.Generators
         /// </summary>
         private List<Vector2DInt> FindOpenPositions()
         {
-            return GetMarkedCells().FindIndexes(x => x == Cell.None);
+            return GetMarkedTiles().FindIndexes(x => x == PuzzleTile.None);
         }
 
         /// <summary>
         /// Returns a random stop block type based on the break block chance.
         /// </summary>
-        private Cell GetRandomBlock()
+        private PuzzleTile GetRandomBlock()
         {
             if (RandomSeed.ChanceSatisfied(BreakBlockChance))
-                return Cell.BreakBlock | Cell.Garbage;
-            return Cell.StopBlock | Cell.Garbage;
+                return PuzzleTile.BreakBlock | PuzzleTile.Garbage;
+            return PuzzleTile.StopBlock | PuzzleTile.Garbage;
         }
 
         /// <summary>
         /// Returns the number of garbage blocks necessary to meet or exceed the target density.
         /// </summary>
-        /// <param name="openArea">The number of open cells in the layout.</param>
+        /// <param name="openArea">The number of open tiles in the layout.</param>
         private int TargetGarbageBlocks(int openArea)
         {
             return (int)Math.Max(Math.Ceiling(TargetDensity * (double)openArea), 0);

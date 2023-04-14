@@ -19,7 +19,7 @@ namespace MPewsey.Aycblok.Generators.Tests
             Logger.RemoveAllListeners();
             Logger.AddListener(Console.WriteLine);
             var seed = new RandomSeed(12345);
-            var area = new Array2D<Cell>(9, 9);
+            var area = new Array2D<PuzzleTile>(9, 9);
 
             var args = new Dictionary<string, object>
             {
@@ -53,8 +53,8 @@ namespace MPewsey.Aycblok.Generators.Tests
             Logger.RemoveAllListeners();
             Logger.AddListener(Console.WriteLine);
 
-            var area = new Array2D<Cell>(9, 9);
-            area[4, 4] = Cell.Goal;
+            var area = new Array2D<PuzzleTile>(9, 9);
+            area[4, 4] = PuzzleTile.Goal;
             Console.WriteLine("Starting Area:");
             Console.WriteLine(PuzzleBoard.GetString(area));
 
@@ -82,8 +82,8 @@ namespace MPewsey.Aycblok.Generators.Tests
             Logger.RemoveAllListeners();
             Logger.AddListener(Console.WriteLine);
 
-            var area = new Array2D<Cell>(21, 21);
-            area[10, 10] = Cell.Goal;
+            var area = new Array2D<PuzzleTile>(21, 21);
+            area[10, 10] = PuzzleTile.Goal;
             Console.WriteLine("Starting Area:");
             Console.WriteLine(PuzzleBoard.GetString(area));
 
@@ -111,8 +111,8 @@ namespace MPewsey.Aycblok.Generators.Tests
             Logger.RemoveAllListeners();
             Logger.AddListener(Console.WriteLine);
 
-            var area = new Array2D<Cell>(21, 21);
-            area[10, 10] = Cell.Goal;
+            var area = new Array2D<PuzzleTile>(21, 21);
+            area[10, 10] = PuzzleTile.Goal;
             Console.WriteLine("Starting Area:");
             Console.WriteLine(PuzzleBoard.GetString(area));
 
@@ -134,11 +134,11 @@ namespace MPewsey.Aycblok.Generators.Tests
             Logger.RemoveAllListeners();
             Logger.AddListener(Console.WriteLine);
 
-            var area = new Array2D<Cell>(21, 21);
-            area[10, 10] = Cell.Goal;
-            area[10, 11] = Cell.Goal;
-            area[11, 10] = Cell.Goal;
-            area[11, 11] = Cell.Goal;
+            var area = new Array2D<PuzzleTile>(21, 21);
+            area[10, 10] = PuzzleTile.Goal;
+            area[10, 11] = PuzzleTile.Goal;
+            area[11, 10] = PuzzleTile.Goal;
+            area[11, 11] = PuzzleTile.Goal;
 
             Console.WriteLine("Starting Area:");
             Console.WriteLine(PuzzleBoard.GetString(area));

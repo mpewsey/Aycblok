@@ -25,10 +25,10 @@ namespace MPewsey.Aycblok
         public List<Vector2DInt> PushBlockPositions { get; private set; } = new List<Vector2DInt>();
 
         /// <summary>
-        /// The puzzle board cells.
+        /// The puzzle board tiles.
         /// </summary>
         [DataMember(Order = 3)]
-        public Array2D<Cell> Cells { get; private set; }
+        public Array2D<PuzzleTile> Tiles { get; private set; }
 
         /// <summary>
         /// A list of moves.
@@ -39,11 +39,11 @@ namespace MPewsey.Aycblok
         /// <summary>
         /// Initializes a new layout.
         /// </summary>
-        /// <param name="cells">The puzzle board cells.</param>
+        /// <param name="tiles">The puzzle board tiles.</param>
         /// <param name="seed">The random seed.</param>
-        public PuzzleLayout(Array2D<Cell> cells, int seed)
+        public PuzzleLayout(Array2D<PuzzleTile> tiles, int seed)
         {
-            Cells = new Array2D<Cell>(cells);
+            Tiles = new Array2D<PuzzleTile>(tiles);
             Seed = seed;
         }
 
@@ -70,17 +70,17 @@ namespace MPewsey.Aycblok
         /// <summary>
         /// Returns an array of puzzle boards for every move of the layout.
         /// </summary>
-        public Array2D<Cell>[] GetPuzzleBoards()
+        public Array2D<PuzzleTile>[] GetPuzzleBoards()
         {
-            var result = new Array2D<Cell>[Moves.Count + 1];
-            var cells = new Array2D<Cell>(Cells);
-            result[0] = cells;
+            var result = new Array2D<PuzzleTile>[Moves.Count + 1];
+            var tiles = new Array2D<PuzzleTile>(Tiles);
+            result[0] = tiles;
 
             for (int i = 0; i < Moves.Count; i++)
             {
-                cells = new Array2D<Cell>(cells);
-                Moves[i].Apply(cells);
-                result[i + 1] = cells;
+                tiles = new Array2D<PuzzleTile>(tiles);
+                Moves[i].Apply(tiles);
+                result[i + 1] = tiles;
             }
 
             return result;
@@ -100,17 +100,17 @@ namespace MPewsey.Aycblok
         /// </summary>
         public string GetMoveReport()
         {
-            var cells = new Array2D<Cell>(Cells);
-            var size = (Moves.Count + 1) * (2 * cells.Array.Length + cells.Rows + 15);
+            var tiles = new Array2D<PuzzleTile>(Tiles);
+            var size = (Moves.Count + 1) * (2 * tiles.Array.Length + tiles.Rows + 15);
             var builder = new StringBuilder(size);
             builder.Append("Start board:\n");
-            PuzzleBoard.AddString(cells, builder);
+            PuzzleBoard.AddString(tiles, builder);
 
             for (int i = 0; i < Moves.Count; i++)
             {
-                Moves[i].Apply(cells);
+                Moves[i].Apply(tiles);
                 builder.Append("\nMove ").Append(i + 1).Append(":\n");
-                PuzzleBoard.AddString(cells, builder);
+                PuzzleBoard.AddString(tiles, builder);
             }
 
             return builder.ToString();

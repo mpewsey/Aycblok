@@ -2,7 +2,7 @@
 
 Aycblok (pronounced "ice block," but cooler) provides a set of procedural generators for creating sliding ice block puzzles. These puzzles bear similarity to the ice block puzzles of _The Legend of Zelda: Twilight Princess_ or the orb puzzles of _Chained Echoes_.
 
-The aim of the puzzles is for a player character to slide all push blocks onto a goal tile. Once pushed, the push blocks slide until they are stopped by an obstacle: either a permanent stop block, a break block that is removed when hit, or another push block. The player can move freely within non-obstacle or non-player void cells and must be positioned directly next to a push block in order to push it in one of the cardinal directions.
+The aim of the puzzles is for a player character to slide all push blocks onto a goal tile. Once pushed, the push blocks slide until they are stopped by an obstacle: either a permanent stop block, a break block that is removed when hit, or another push block. The player can move freely within non-obstacle or non-player void tiles and must be positioned directly next to a push block in order to push it in one of the cardinal directions.
 
 The following is a move-by-move report as acquired for one such generated puzzle:
 
@@ -33,9 +33,9 @@ Move 3:              Move 4:              Move 5:
 ## Features
 
 * Ice push block puzzle generation for a tile area.
-* Input tile areas can have their cells flagged to add confining geometry to add challenge or visual interest.
+* Input tile areas can have their tiles flagged to add confining geometry to add challenge or visual interest.
 * Support of multiple push blocks in a single puzzle area, which can interact and stop or block each other.
-* Support of area obstacles such a holes by means of void tiles, which disallow traversal of a cell by the player, the push blocks, or both.
+* Support of area obstacles such a holes by means of void tiles, which disallow traversal of a tile by the player, the push blocks, or both.
 * Includes a random garbage block generator to clutter the area and make the solution less obvious.
 * Customizable parameters for generation steps to help adjust the feel and difficulty of puzzles.
 
@@ -47,7 +47,7 @@ The generation pipeline provides a way for multiple generation steps to be chain
 // Create a dictionary of arguments to be passed to each pipeline step.
 var args = new Dictionary<string, object>
 {
-    { "PuzzleArea", new Array2D<Cell>(20, 20) },
+    { "PuzzleArea", new Array2D<PuzzleTile>(20, 20) },
     { "RandomSeed", new RandomSeed(12345) },
 };
 

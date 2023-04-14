@@ -104,8 +104,8 @@ namespace MPewsey.Aycblok.Generators
         public bool ApplyStep(PipelineResults results)
         {
             var randomSeed = results.GetArgument<RandomSeed>("RandomSeed");
-            var cells = results.GetArgument<Array2D<Cell>>("PuzzleArea");
-            var layout = GenerateLayout(cells, randomSeed);
+            var tiles = results.GetArgument<Array2D<PuzzleTile>>("PuzzleArea");
+            var layout = GenerateLayout(tiles, randomSeed);
             results.SetOutput("PuzzleLayout", layout);
             return layout != null;
         }
@@ -114,16 +114,16 @@ namespace MPewsey.Aycblok.Generators
         /// Generates a new puzzle layout based on the specified input area and returns it.
         /// Returns null if unsuccessful.
         /// </summary>
-        /// <param name="cells">The puzzle area cells. These cells should contain at least one goal.</param>
+        /// <param name="tiles">The puzzle area tiles. These tiles should contain at least one goal.</param>
         /// <param name="randomSeed">The random seed.</param>
-        public PuzzleLayout GenerateLayout(Array2D<Cell> cells, RandomSeed randomSeed)
+        public PuzzleLayout GenerateLayout(Array2D<PuzzleTile> tiles, RandomSeed randomSeed)
         {
             Logger.Log("[Puzzle Move Generator] Generating puzzle moves...");
             Initialize(randomSeed);
 
             for (int i = 1; i <= MaxIterations; i++)
             {
-                Layout = new PuzzleLayout(cells, randomSeed.Seed);
+                Layout = new PuzzleLayout(tiles, randomSeed.Seed);
                 AddPushBlocks();
 
                 if (AddMoves())
@@ -141,16 +141,16 @@ namespace MPewsey.Aycblok.Generators
         }
 
         /// <summary>
-        /// Returns a list of goal positions that have an empty neighboring cell.
+        /// Returns a list of goal positions that have an empty neighboring tile.
         /// </summary>
         private List<Vector2DInt> FindGoalPositions()
         {
-            var positions = Layout.Cells.FindIndexes(x => x.HasFlag(Cell.Goal));
+            var positions = Layout.Tiles.FindIndexes(x => x.HasFlag(PuzzleTile.Goal));
             var result = new List<Vector2DInt>();
 
             foreach (var position in positions)
             {
-                if (AnyNeighborCellIsEmpty(position.X, position.Y))
+                if (AnyNeighborTileIsEmpty(position.X, position.Y))
                     result.Add(position);
             }
 
@@ -158,16 +158,16 @@ namespace MPewsey.Aycblok.Generators
         }
 
         /// <summary>
-        /// Returns true if any neighbor cell is empty.
+        /// Returns true if any neighbor tile is empty.
         /// </summary>
         /// <param name="row">The row.</param>
         /// <param name="column">The column.</param>
-        private bool AnyNeighborCellIsEmpty(int row, int column)
+        private bool AnyNeighborTileIsEmpty(int row, int column)
         {
-            return GetCell(row, column - 1) == Cell.None
-                || GetCell(row, column + 1) == Cell.None
-                || GetCell(row - 1, column) == Cell.None
-                || GetCell(row + 1, column) == Cell.None;
+            return GetTile(row, column - 1) == PuzzleTile.None
+                || GetTile(row, column + 1) == PuzzleTile.None
+                || GetTile(row - 1, column) == PuzzleTile.None
+                || GetTile(row + 1, column) == PuzzleTile.None;
         }
 
         /// <summary>
@@ -184,7 +184,7 @@ namespace MPewsey.Aycblok.Generators
             for (int i = 0; i < PushBlockCount; i++)
             {
                 var position = positions[RandomSeed.Next(0, positions.Count)];
-                Layout.Cells[position] |= Cell.PushBlock;
+                Layout.Tiles[position] |= PuzzleTile.PushBlock;
                 Layout.PushBlockPositions.Add(position);
             }
         }
@@ -224,78 +224,78 @@ namespace MPewsey.Aycblok.Generators
         }
 
         /// <summary>
-        /// Returns true if a cell can be occupied by the pusher.
+        /// Returns true if a tile can be occupied by the pusher.
         /// </summary>
-        /// <param name="cell">The cell.</param>
-        private static bool PusherCanOccupy(Cell cell)
+        /// <param name="tile">The tile.</param>
+        private static bool PusherCanOccupy(PuzzleTile tile)
         {
-            var layers = Cell.PushBlock | Cell.BreakBlock | Cell.StopBlock | Cell.OutOfBounds | Cell.PusherVoid;
-            return (cell & layers) == Cell.None;
+            var layers = PuzzleTile.PushBlock | PuzzleTile.BreakBlock | PuzzleTile.StopBlock | PuzzleTile.OutOfBounds | PuzzleTile.PusherVoid;
+            return (tile & layers) == PuzzleTile.None;
         }
 
         /// <summary>
-        /// Returns true if a cell can be occupied by a push block.
+        /// Returns true if a tile can be occupied by a push block.
         /// </summary>
-        /// <param name="cell">The cell.</param>
-        private static bool PushBlockCanOccupy(Cell cell)
+        /// <param name="tile">The tile.</param>
+        private static bool PushBlockCanOccupy(PuzzleTile tile)
         {
-            var layers = Cell.PushBlock | Cell.BreakBlock | Cell.StopBlock | Cell.OutOfBounds | Cell.BlockVoid;
-            return (cell & layers) == Cell.None;
+            var layers = PuzzleTile.PushBlock | PuzzleTile.BreakBlock | PuzzleTile.StopBlock | PuzzleTile.OutOfBounds | PuzzleTile.BlockVoid;
+            return (tile & layers) == PuzzleTile.None;
         }
 
         /// <summary>
-        /// Returns true if the cell can be a stop cell for a push block.
+        /// Returns true if the tile can be a stop tile for a push block.
         /// </summary>
-        /// <param name="cell">The cell.</param>
-        private static bool CanBeStopCell(Cell cell)
+        /// <param name="tile">The tile.</param>
+        private static bool CanBeStopTile(PuzzleTile tile)
         {
-            var layers = Cell.PushBlock | Cell.StopBlock;
-            return cell == Cell.None || (cell & layers) != Cell.None;
+            var layers = PuzzleTile.PushBlock | PuzzleTile.StopBlock;
+            return tile == PuzzleTile.None || (tile & layers) != PuzzleTile.None;
         }
 
         /// <summary>
-        /// Returns true if the pusher can occupy the cell to the back (toward the from position)
+        /// Returns true if the pusher can occupy the tile to the back (toward the from position)
         /// of the position.
         /// </summary>
         /// <param name="position">The position.</param>
         /// <param name="offset">The offset direction from the to position.</param>
-        private bool PusherCanOccupyBackCell(Vector2DInt position, Vector2DInt offset)
+        private bool PusherCanOccupyBackTile(Vector2DInt position, Vector2DInt offset)
         {
             var backPosition = position + offset;
-            var backCell = GetCell(backPosition);
-            return PusherCanOccupy(backCell);
+            var backTile = GetTile(backPosition);
+            return PusherCanOccupy(backTile);
         }
 
         /// <summary>
-        /// Returns true if one of the side cells can contain and push block, and the other can contain
-        /// a stop cell.
+        /// Returns true if one of the side tiles can contain and push block, and the other can contain
+        /// a stop tile.
         /// </summary>
-        /// <param name="position">The cell position.</param>
+        /// <param name="position">The tile position.</param>
         /// <param name="offset">The offset direction from the to position.</param>
-        private bool SideCellsPermitPushBlock(Vector2DInt position, Vector2DInt offset)
+        private bool SideTilesPermitPushBlock(Vector2DInt position, Vector2DInt offset)
         {
             var sidePosition1 = position + new Vector2DInt(offset.Y, offset.X);
             var sidePosition2 = position + new Vector2DInt(-offset.Y, -offset.X);
-            var sideCell1 = GetCell(sidePosition1);
-            var sideCell2 = GetCell(sidePosition2);
+            var sideTile1 = GetTile(sidePosition1);
+            var sideTile2 = GetTile(sidePosition2);
 
-            return (PushBlockCanOccupy(sideCell1) && CanBeStopCell(sideCell2))
-                || (PushBlockCanOccupy(sideCell2) && CanBeStopCell(sideCell1));
+            return (PushBlockCanOccupy(sideTile1) && CanBeStopTile(sideTile2))
+                || (PushBlockCanOccupy(sideTile2) && CanBeStopTile(sideTile1));
         }
 
         /// <summary>
-        /// Returns true if an unobstructed goal is in line with the cell position.
+        /// Returns true if an unobstructed goal is in line with the tile position.
         /// </summary>
-        /// <param name="position">The cell position.</param>
+        /// <param name="position">The tile position.</param>
         private bool GoalInSight(Vector2DInt position)
         {
-            var layers = Cell.PushBlock | Cell.BreakBlock | Cell.StopBlock | Cell.OutOfBounds | Cell.BlockVoid | Cell.Goal;
+            var layers = PuzzleTile.PushBlock | PuzzleTile.BreakBlock | PuzzleTile.StopBlock | PuzzleTile.OutOfBounds | PuzzleTile.BlockVoid | PuzzleTile.Goal;
 
             foreach (var offset in Offsets)
             {
-                var hit = PuzzleBoard.Raycast(Layout.Cells, position, offset, layers);
+                var hit = PuzzleBoard.Raycast(Layout.Tiles, position, offset, layers);
 
-                if (hit.HitCell.HasFlag(Cell.Goal))
+                if (hit.HitTile.HasFlag(PuzzleTile.Goal))
                     return true;
             }
 
@@ -345,31 +345,31 @@ namespace MPewsey.Aycblok.Generators
         {
             var result = new List<Vector2DInt>();
             var toPosition = Layout.PushBlockPositions[pushBlock];
-            var cell = GetCell(toPosition);
+            var tile = GetTile(toPosition);
             var forwardPosition = toPosition - offset;
-            var forwardCell = GetCell(forwardPosition);
+            var forwardTile = GetTile(forwardPosition);
 
-            // Ensure that a stop cell can be added if the push block is not located on a goal.
-            if (!cell.HasFlag(Cell.Goal) && !CanBeStopCell(forwardCell))
+            // Ensure that a stop tile can be added if the push block is not located on a goal.
+            if (!tile.HasFlag(PuzzleTile.Goal) && !CanBeStopTile(forwardTile))
                 return result;
 
             // Ensure that the move is not opposite the last if prevent reversals is enabled.
             if (PreventReversals && IsOppositeLastMove(pushBlock, offset))
                 return result;
 
-            var layers = Cell.PushBlock | Cell.BreakBlock | Cell.StopBlock | Cell.OutOfBounds | Cell.BlockVoid | Cell.Goal;
-            var hit = PuzzleBoard.Raycast(Layout.Cells, toPosition, offset, layers);
+            var layers = PuzzleTile.PushBlock | PuzzleTile.BreakBlock | PuzzleTile.StopBlock | PuzzleTile.OutOfBounds | PuzzleTile.BlockVoid | PuzzleTile.Goal;
+            var hit = PuzzleBoard.Raycast(Layout.Tiles, toPosition, offset, layers);
 
             for (var fromPosition = toPosition + offset; fromPosition != hit.Position; fromPosition += offset)
             {
                 // Ensure that the block can be pushed.
-                if (!PusherCanOccupyBackCell(fromPosition, offset))
+                if (!PusherCanOccupyBackTile(fromPosition, offset))
                     continue;
                 // Ensure the push block can be moved on one of its sides, and that it can be blocked on the other.
-                if (!SideCellsPermitPushBlock(fromPosition, offset))
+                if (!SideTilesPermitPushBlock(fromPosition, offset))
                     continue;
                 // Prevent location from being aligned with a goal when it is not located on a goal.
-                if (!cell.HasFlag(Cell.Goal) && GoalInSight(fromPosition))
+                if (!tile.HasFlag(PuzzleTile.Goal) && GoalInSight(fromPosition))
                     continue;
 
                 result.Add(fromPosition);
@@ -380,46 +380,46 @@ namespace MPewsey.Aycblok.Generators
         }
 
         /// <summary>
-        /// Returns the cell at the specified position or Out of Bounds.
+        /// Returns the tile at the specified position or Out of Bounds.
         /// </summary>
-        /// <param name="position">The cell position.</param>
-        private Cell GetCell(Vector2DInt position)
+        /// <param name="position">The tile position.</param>
+        private PuzzleTile GetTile(Vector2DInt position)
         {
-            return GetCell(position.X, position.Y);
+            return GetTile(position.X, position.Y);
         }
 
         /// <summary>
-        /// Returns the cell at the specified index or Out of Bounds.
+        /// Returns the tile at the specified index or Out of Bounds.
         /// </summary>
         /// <param name="row">The row.</param>
         /// <param name="column">The column.</param>
-        private Cell GetCell(int row, int column)
+        private PuzzleTile GetTile(int row, int column)
         {
-            return Layout.Cells.GetOrDefault(row, column, Cell.OutOfBounds);
+            return Layout.Tiles.GetOrDefault(row, column, PuzzleTile.OutOfBounds);
         }
 
         /// <summary>
-        /// Returns the stop cell type for the push block and offset direction.
+        /// Returns the stop tile type for the push block and offset direction.
         /// </summary>
         /// <param name="pushBlock">The push block.</param>
         /// <param name="offset">The offset direction from the to position.</param>
-        private Cell GetStopCell(int pushBlock, Vector2DInt offset)
+        private PuzzleTile GetStopTile(int pushBlock, Vector2DInt offset)
         {
             var position = Layout.PushBlockPositions[pushBlock];
 
-            if (GetCell(position).HasFlag(Cell.Goal))
-                return Cell.Goal;
+            if (GetTile(position).HasFlag(PuzzleTile.Goal))
+                return PuzzleTile.Goal;
 
             var blockPosition = position - offset;
-            var blockCell = GetCell(blockPosition);
+            var blockTile = GetTile(blockPosition);
 
-            if (blockCell.HasFlag(Cell.PushBlock))
-                return Cell.PushBlock;
-            if (blockCell.HasFlag(Cell.StopBlock))
-                return Cell.StopBlock;
+            if (blockTile.HasFlag(PuzzleTile.PushBlock))
+                return PuzzleTile.PushBlock;
+            if (blockTile.HasFlag(PuzzleTile.StopBlock))
+                return PuzzleTile.StopBlock;
             if (IsOppositeLastMove(pushBlock, offset) || Layout.Intersects(blockPosition))
-                return Cell.BreakBlock;
-            return Cell.StopBlock;
+                return PuzzleTile.BreakBlock;
+            return PuzzleTile.StopBlock;
         }
 
         /// <summary>
@@ -432,10 +432,10 @@ namespace MPewsey.Aycblok.Generators
             {
                 foreach (var fromPosition in GetFromPositions(pushBlock, offset))
                 {
-                    var stopCell = GetStopCell(pushBlock, offset);
+                    var stopTile = GetStopTile(pushBlock, offset);
                     var toPosition = Layout.PushBlockPositions[pushBlock];
-                    var move = new PuzzleMove(pushBlock, stopCell, fromPosition, toPosition);
-                    move.InverseApply(Layout.Cells);
+                    var move = new PuzzleMove(pushBlock, stopTile, fromPosition, toPosition);
+                    move.InverseApply(Layout.Tiles);
                     Layout.PushBlockPositions[pushBlock] = fromPosition;
                     Layout.Moves.Add(move);
                     return true;

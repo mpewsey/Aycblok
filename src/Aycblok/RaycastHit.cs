@@ -8,30 +8,30 @@ namespace MPewsey.Aycblok
     public struct RaycastHit
     {
         /// <summary>
-        /// The value of the blocking cell.
+        /// The value of the blocking tile.
         /// </summary>
-        public Cell HitCell { get; }
+        public PuzzleTile HitTile { get; }
 
         /// <summary>
-        /// The position of the blocking cell.
+        /// The position of the blocking tile.
         /// </summary>
         public Vector2DInt Position { get; }
 
         /// <summary>
         /// Initializes a new raycast hit.
         /// </summary>
-        /// <param name="hitCell">The value of the blocking cell.</param>
-        /// <param name="position">The position of the blocking cell.</param>
+        /// <param name="hitTile">The value of the blocking tile.</param>
+        /// <param name="position">The position of the blocking tile.</param>
 
-        public RaycastHit(Cell hitCell, Vector2DInt position)
+        public RaycastHit(PuzzleTile hitTile, Vector2DInt position)
         {
-            HitCell = hitCell;
+            HitTile = hitTile;
             Position = position;
         }
 
         public override string ToString()
         {
-            return $"RaycastHit(HitCell = {HitCell}, Position = {Position})";
+            return $"RaycastHit(HitTile = {HitTile}, Position = {Position})";
         }
     }
 }

@@ -20,7 +20,7 @@ namespace MPewsey.Aycblok
         /// The type of block serving to stop the push block.
         /// </summary>
         [DataMember(Order = 2)]
-        public Cell StopCell { get; private set; }
+        public PuzzleTile StopTile { get; private set; }
 
         /// <summary>
         /// The starting position of the push block.
@@ -38,43 +38,43 @@ namespace MPewsey.Aycblok
         /// Initializes a new move.
         /// </summary>
         /// <param name="pushBlock">The push block.</param>
-        /// <param name="stopCell">The type of block serving to stop the push block.</param>
+        /// <param name="stopTile">The type of block serving to stop the push block.</param>
         /// <param name="fromPosition">The starting position of the push block.</param>
         /// <param name="toPosition">The final position of the push block.</param>
 
-        public PuzzleMove(int pushBlock, Cell stopCell, Vector2DInt fromPosition, Vector2DInt toPosition)
+        public PuzzleMove(int pushBlock, PuzzleTile stopTile, Vector2DInt fromPosition, Vector2DInt toPosition)
         {
             PushBlock = pushBlock;
-            StopCell = stopCell;
+            StopTile = stopTile;
             FromPosition = fromPosition;
             ToPosition = toPosition;
         }
 
         public override string ToString()
         {
-            return $"PuzzleMove(PushBlock = {PushBlock}, StopCell = {StopCell}, FromPosition = {FromPosition}, ToPosition = {ToPosition})";
+            return $"PuzzleMove(PushBlock = {PushBlock}, StopTile = {StopTile}, FromPosition = {FromPosition}, ToPosition = {ToPosition})";
         }
 
         /// <summary>
         /// Modifies the specified puzzle board to move the push block from the from position to the to position.
         /// </summary>
-        /// <param name="cells">The puzzle board.</param>
-        public void Apply(Array2D<Cell> cells)
+        /// <param name="tiles">The puzzle board.</param>
+        public void Apply(Array2D<PuzzleTile> tiles)
         {
-            cells[StopCellPosition()] &= ~Cell.BreakBlock;
-            cells[ToPosition] |= Cell.PushBlock;
-            cells[FromPosition] &= ~Cell.PushBlock;
+            tiles[StopTilePosition()] &= ~PuzzleTile.BreakBlock;
+            tiles[ToPosition] |= PuzzleTile.PushBlock;
+            tiles[FromPosition] &= ~PuzzleTile.PushBlock;
         }
 
         /// <summary>
         /// Modifies the specified puzzle board to move the push block from the to position to the from position.
         /// </summary>
-        /// <param name="cells">The puzzle board.</param>
-        public void InverseApply(Array2D<Cell> cells)
+        /// <param name="tiles">The puzzle board.</param>
+        public void InverseApply(Array2D<PuzzleTile> tiles)
         {
-            cells[StopCellPosition()] |= StopCell;
-            cells[FromPosition] |= Cell.PushBlock;
-            cells[ToPosition] &= ~Cell.PushBlock;
+            tiles[StopTilePosition()] |= StopTile;
+            tiles[FromPosition] |= PuzzleTile.PushBlock;
+            tiles[ToPosition] &= ~PuzzleTile.PushBlock;
         }
 
         /// <summary>
@@ -91,35 +91,35 @@ namespace MPewsey.Aycblok
         }
 
         /// <summary>
-        /// The position of the stop cell.
+        /// The position of the stop tile.
         /// </summary>
-        public Vector2DInt StopCellPosition()
+        public Vector2DInt StopTilePosition()
         {
-            return ToPosition + StopCellOffset();
+            return ToPosition + StopTileOffset();
         }
 
         /// <summary>
-        /// The position of the push cell.
+        /// The position of the push tile.
         /// </summary>
-        public Vector2DInt PushCellPosition()
+        public Vector2DInt PushTilePosition()
         {
-            return FromPosition + PushCellOffset();
+            return FromPosition + PushTileOffset();
         }
 
         /// <summary>
-        /// The offset of the stop cell from the to position.
+        /// The offset of the stop tile from the to position.
         /// </summary>
-        private Vector2DInt StopCellOffset()
+        private Vector2DInt StopTileOffset()
         {
-            if (StopCell == Cell.Goal)
+            if (StopTile == PuzzleTile.Goal)
                 return Vector2DInt.Zero;
             return Vector2DInt.Sign(ToPosition - FromPosition);
         }
 
         /// <summary>
-        /// The offset of the push cell from the from position.
+        /// The offset of the push tile from the from position.
         /// </summary>
-        private Vector2DInt PushCellOffset()
+        private Vector2DInt PushTileOffset()
         {
             return Vector2DInt.Sign(FromPosition - ToPosition);
         }
