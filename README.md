@@ -2,7 +2,7 @@
 
 Aycblok (pronounced "ice block," but cooler) provides a set of procedural generators for creating sliding ice block puzzles.
 
-The aim of the puzzles is for a player character to slide all push blocks onto a goal tile. Once pushed, the push blocks slide until they are stopped by an obstacle: either a permanent stop block, a break block that is removed when hit, or another push block. The player can move freely within non-obstacle or non-player void tiles and must be positioned directly next to a push block in order to push it in one of the cardinal directions. The push block are assumed to disappear when they are pushed onto a goal tile. The puzzle is complete when all push blocks have been pushed onto goal tiles.
+The aim of the puzzles is for a player character to slide all push blocks onto a goal tile. Once pushed, the push blocks slide until they are stopped by an obstacle: either a permanent stop block, a break block that is removed when hit, or another push block. The player can move freely within non-obstacle or non-player void tiles and must be positioned directly next to a push block in order to push it in one of the cardinal directions. The push blocks are assumed to disappear when they are pushed onto a goal tile. The puzzle is complete when all push blocks have been pushed onto goal tiles.
 
 The following is a move-by-move report as acquired for one such generated puzzle:
 
