@@ -29,6 +29,7 @@ namespace MPewsey.Aycblok
             Position = position;
         }
 
+        /// <inheritdoc/>
         public override string ToString()
         {
             return $"RaycastHit(HitTile = {HitTile}, Position = {Position})";

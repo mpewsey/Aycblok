@@ -33,7 +33,7 @@ namespace MPewsey.Aycblok.Generators.Tests
                 new PuzzleGarbageGenerator(0.1f, 0.5f)
             );
 
-            var results = pipeline.Generate(args);
+            var results = pipeline.Run(args);
             var layout = results.GetOutput<PuzzleLayout>("PuzzleLayout");
             Assert.IsNotNull(layout);
 

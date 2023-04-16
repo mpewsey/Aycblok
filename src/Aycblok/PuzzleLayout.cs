@@ -47,6 +47,7 @@ namespace MPewsey.Aycblok
             Seed = seed;
         }
 
+        /// <inheritdoc/>
         public override string ToString()
         {
             return $"PuzzleLayout(Seed = {Seed})";

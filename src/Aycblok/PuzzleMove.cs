@@ -50,6 +50,7 @@ namespace MPewsey.Aycblok
             ToPosition = toPosition;
         }
 
+        /// <inheritdoc/>
         public override string ToString()
         {
             return $"PuzzleMove(PushBlock = {PushBlock}, StopTile = {StopTile}, FromPosition = {FromPosition}, ToPosition = {ToPosition})";

@@ -5,6 +5,7 @@ using MPewsey.Common.Pipelines;
 using MPewsey.Common.Random;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace MPewsey.Aycblok.Generators
 {
@@ -62,7 +63,8 @@ namespace MPewsey.Aycblok.Generators
         /// * RandomSeed - The random seed.
         /// </summary>
         /// <param name="results">The generation pipeline results to which artifacts will be added.</param>
-        public bool ApplyStep(PipelineResults results)
+        /// <param name="cancellationToken">The cancellation token.</param>
+        public bool ApplyStep(PipelineResults results, CancellationToken cancellationToken)
         {
             var randomSeed = results.GetArgument<RandomSeed>("RandomSeed");
             var layout = results.GetArgument<PuzzleLayout>("PuzzleLayout");
