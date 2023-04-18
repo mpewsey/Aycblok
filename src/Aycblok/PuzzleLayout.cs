@@ -71,7 +71,7 @@ namespace MPewsey.Aycblok
         /// <summary>
         /// Returns an array of puzzle boards for every move of the layout.
         /// </summary>
-        public Array2D<PuzzleTile>[] GetPuzzleBoards()
+        public Array2D<PuzzleTile>[] PuzzleBoards()
         {
             var result = new Array2D<PuzzleTile>[Moves.Count + 1];
             var tiles = new Array2D<PuzzleTile>(Tiles);
@@ -91,27 +91,27 @@ namespace MPewsey.Aycblok
         /// Returns the puzzle board strings in a tiled layout.
         /// </summary>
         /// <param name="columns">The number of columns in the layout.</param>
-        public string GetTiledMoveReport(int columns)
+        public string TiledMoveReport(int columns)
         {
-            return PuzzleBoard.GetTiledString(GetPuzzleBoards(), columns);
+            return PuzzleBoard.TilesToTiledString(PuzzleBoards(), columns);
         }
 
         /// <summary>
         /// Returns a string with puzzle boards for every move of the layout.
         /// </summary>
-        public string GetMoveReport()
+        public string MoveReport()
         {
             var tiles = new Array2D<PuzzleTile>(Tiles);
             var size = (Moves.Count + 1) * (2 * tiles.Array.Length + tiles.Rows + 15);
             var builder = new StringBuilder(size);
             builder.Append("Start board:\n");
-            PuzzleBoard.AddString(tiles, builder);
+            PuzzleBoard.AppendTilesToString(tiles, builder);
 
             for (int i = 0; i < Moves.Count; i++)
             {
                 Moves[i].Apply(tiles);
                 builder.Append("\nMove ").Append(i + 1).Append(":\n");
-                PuzzleBoard.AddString(tiles, builder);
+                PuzzleBoard.AppendTilesToString(tiles, builder);
             }
 
             return builder.ToString();
