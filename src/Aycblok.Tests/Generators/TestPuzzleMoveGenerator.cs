@@ -37,7 +37,7 @@ namespace MPewsey.Aycblok.Generators.Tests
             var layout = results.GetOutput<PuzzleLayout>("PuzzleLayout");
             Assert.IsNotNull(layout);
 
-            Console.WriteLine(layout.GetTiledMoveReport(3));
+            Console.WriteLine(layout.TiledMoveReport(3));
             Logger.RemoveAllListeners();
         }
 
@@ -56,14 +56,14 @@ namespace MPewsey.Aycblok.Generators.Tests
             var area = new Array2D<PuzzleTile>(9, 9);
             area[4, 4] = PuzzleTile.Goal;
             Console.WriteLine("Starting Area:");
-            Console.WriteLine(PuzzleBoard.GetString(area));
+            Console.WriteLine(PuzzleBoard.TilesToString(area));
 
             var randomSeed = new RandomSeed(seed);
             var generator = new PuzzleMoveGenerator(1, 8);
             var layout = generator.GenerateLayout(area, randomSeed);
             Assert.IsNotNull(layout);
 
-            Console.WriteLine(layout.GetTiledMoveReport(3));
+            Console.WriteLine(layout.TiledMoveReport(3));
             Logger.RemoveAllListeners();
 
             XmlSerialization.SaveXml($"SmallLayout{seed}.xml", layout);
@@ -85,14 +85,14 @@ namespace MPewsey.Aycblok.Generators.Tests
             var area = new Array2D<PuzzleTile>(21, 21);
             area[10, 10] = PuzzleTile.Goal;
             Console.WriteLine("Starting Area:");
-            Console.WriteLine(PuzzleBoard.GetString(area));
+            Console.WriteLine(PuzzleBoard.TilesToString(area));
 
             var randomSeed = new RandomSeed(seed);
             var generator = new PuzzleMoveGenerator(1, 10);
             var layout = generator.GenerateLayout(area, randomSeed);
             Assert.IsNotNull(layout);
 
-            Console.WriteLine(layout.GetMoveReport());
+            Console.WriteLine(layout.MoveReport());
             Logger.RemoveAllListeners();
 
             XmlSerialization.SaveXml($"SimpleLayout{seed}.xml", layout);
@@ -114,14 +114,14 @@ namespace MPewsey.Aycblok.Generators.Tests
             var area = new Array2D<PuzzleTile>(21, 21);
             area[10, 10] = PuzzleTile.Goal;
             Console.WriteLine("Starting Area:");
-            Console.WriteLine(PuzzleBoard.GetString(area));
+            Console.WriteLine(PuzzleBoard.TilesToString(area));
 
             var randomSeed = new RandomSeed(seed);
             var generator = new PuzzleMoveGenerator(1, 10, false);
             var layout = generator.GenerateLayout(area, randomSeed);
             Assert.IsNotNull(layout);
 
-            Console.WriteLine(layout.GetMoveReport());
+            Console.WriteLine(layout.MoveReport());
             Logger.RemoveAllListeners();
         }
 
@@ -141,14 +141,14 @@ namespace MPewsey.Aycblok.Generators.Tests
             area[11, 11] = PuzzleTile.Goal;
 
             Console.WriteLine("Starting Area:");
-            Console.WriteLine(PuzzleBoard.GetString(area));
+            Console.WriteLine(PuzzleBoard.TilesToString(area));
 
             var randomSeed = new RandomSeed(seed);
             var generator = new PuzzleMoveGenerator(3, 50, true);
             var layout = generator.GenerateLayout(area, randomSeed);
             Assert.IsNotNull(layout);
 
-            Console.WriteLine(layout.GetMoveReport());
+            Console.WriteLine(layout.MoveReport());
             Logger.RemoveAllListeners();
         }
     }

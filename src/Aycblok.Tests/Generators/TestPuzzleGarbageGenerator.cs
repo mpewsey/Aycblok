@@ -23,12 +23,12 @@ namespace MPewsey.Aycblok.Generators.Tests
             var area = new Array2D<PuzzleTile>(21, 21);
             area[10, 10] = PuzzleTile.Goal;
             Console.WriteLine("Starting Area:");
-            Console.WriteLine(PuzzleBoard.GetString(area));
+            Console.WriteLine(PuzzleBoard.TilesToString(area));
 
             var layout = new PuzzleLayout(area, randomSeed.Seed);
             var generator = new PuzzleGarbageGenerator(0.5f, 0.5f);
             generator.GenerateGarbage(layout, randomSeed);
-            Console.WriteLine(layout.GetMoveReport());
+            Console.WriteLine(layout.MoveReport());
             Assert.IsTrue(layout.Tiles.Array.Contains(PuzzleTile.BreakBlock | PuzzleTile.Garbage));
             Assert.IsTrue(layout.Tiles.Array.Contains(PuzzleTile.StopBlock | PuzzleTile.Garbage));
 

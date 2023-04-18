@@ -23,12 +23,12 @@ namespace MPewsey.Aycblok.Generators.Tests
             var randomSeed = new RandomSeed(seed);
             var area = new Array2D<PuzzleTile>(21, 21);
             Console.WriteLine("Starting Area:");
-            Console.WriteLine(PuzzleBoard.GetString(area));
+            Console.WriteLine(PuzzleBoard.TilesToString(area));
 
             var generator = new PuzzleGoalGenerator(new Vector2DInt(2, 2));
             var result = generator.GenerateGoal(area, randomSeed);
             Console.WriteLine("Result:");
-            Console.WriteLine(PuzzleBoard.GetString(result));
+            Console.WriteLine(PuzzleBoard.TilesToString(result));
 
             Assert.AreEqual(4, result.Array.Count(x => x == PuzzleTile.Goal));
             Logger.RemoveAllListeners();
