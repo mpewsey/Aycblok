@@ -59,7 +59,7 @@ var pipeline = new Pipeline(
 );
 
 // Run the pipeline and retrieve an output
-var results = pipeline.Generate(args);
+var results = pipeline.Run(args);
 var layout = results.GetOutput<PuzzleLayout>("PuzzleLayout");
 ```
 
