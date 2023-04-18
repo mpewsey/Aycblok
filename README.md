@@ -32,7 +32,7 @@ Move 3:              Move 4:              Move 5:
 
 ## Features
 
-* Ice push block puzzle generation for a tile area.
+* Ice push block puzzle generation for a specified tile area.
 * Input tile areas can have their tiles flagged to add confining geometry to add challenge or visual interest.
 * Support of multiple push blocks in a single puzzle area, which can interact and stop or block each other.
 * Support of area obstacles such a holes by means of void tiles, which disallow traversal of a tile by the player, the push blocks, or both.
