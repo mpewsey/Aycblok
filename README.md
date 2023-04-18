@@ -1,5 +1,13 @@
 # Aycblok
 
+[![Tests](https://github.com/mpewsey/Aycblok/actions/workflows/tests.yml/badge.svg?event=push)](https://github.com/mpewsey/Aycblok/actions/workflows/tests.yml)
+[![Docs](https://github.com/mpewsey/Aycblok/actions/workflows/docs.yml/badge.svg?event=push)](https://mpewsey.github.io/Aycblok)
+[![codecov](https://codecov.io/gh/mpewsey/Aycblok/branch/main/graph/badge.svg?token=Q1LDU83FAQ)](https://codecov.io/gh/mpewsey/Aycblok)
+![.NET Standard](https://img.shields.io/badge/.NET%20Standard-2.0-blue)
+[![NuGet](https://img.shields.io/nuget/v/Aycblok?label=NuGet)](https://www.nuget.org/packages/Aycblok/)
+
+## About
+
 Aycblok (pronounced "ice block," but cooler) provides a set of procedural generators for creating sliding ice block puzzles.
 
 The aim of the puzzles is for a player character to slide all push blocks onto a goal tile. Once pushed, the push blocks slide until they are stopped by an obstacle: either a permanent stop block, a break block that is removed when hit, or another push block. The player can move freely within non-obstacle or non-player void tiles and must be positioned directly next to a push block in order to push it in one of the cardinal directions. A push block is assumed to disappear when it is pushed onto a goal tile. The puzzle is complete when all push blocks have been pushed onto goal tiles.
