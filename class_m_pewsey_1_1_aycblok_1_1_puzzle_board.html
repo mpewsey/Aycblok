@@ -98,7 +98,6 @@ $(document).ready(function(){initNavTree('class_m_pewsey_1_1_aycblok_1_1_puzzle_
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="class_m_pewsey_1_1_aycblok_1_1_puzzle_board-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">MPewsey.Aycblok.PuzzleBoard Class Reference</div></div>
 </div><!--header-->
@@ -109,32 +108,35 @@ $(document).ready(function(){initNavTree('class_m_pewsey_1_1_aycblok_1_1_puzzle_
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a617aa05608aef399f21545cf32190e85"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#a617aa05608aef399f21545cf32190e85">AddString</a> (Array2D&lt; <a class="el" href="namespace_m_pewsey_1_1_aycblok.html#abf3803592e3f896973e7a3f248b70097">PuzzleTile</a> &gt; tiles, StringBuilder builder)</td></tr>
-<tr class="memdesc:a617aa05608aef399f21545cf32190e85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the tiles string to the string builder.  <a href="class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#a617aa05608aef399f21545cf32190e85">More...</a><br /></td></tr>
-<tr class="separator:a617aa05608aef399f21545cf32190e85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0a87ce98b9c79239b972aef4d1556a0"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#ae0a87ce98b9c79239b972aef4d1556a0">GetString</a> (Array2D&lt; <a class="el" href="namespace_m_pewsey_1_1_aycblok.html#abf3803592e3f896973e7a3f248b70097">PuzzleTile</a> &gt; tiles)</td></tr>
-<tr class="memdesc:ae0a87ce98b9c79239b972aef4d1556a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the string representation for a puzzle board.  <a href="class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#ae0a87ce98b9c79239b972aef4d1556a0">More...</a><br /></td></tr>
-<tr class="separator:ae0a87ce98b9c79239b972aef4d1556a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2c44d7ed736b9a4c45a8f0e050947c5"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#aa2c44d7ed736b9a4c45a8f0e050947c5">GetTiledString</a> (IList&lt; Array2D&lt; <a class="el" href="namespace_m_pewsey_1_1_aycblok.html#abf3803592e3f896973e7a3f248b70097">PuzzleTile</a> &gt; &gt; tiles, int columns)</td></tr>
-<tr class="memdesc:aa2c44d7ed736b9a4c45a8f0e050947c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the puzzle board strings in a tiled layout.  <a href="class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#aa2c44d7ed736b9a4c45a8f0e050947c5">More...</a><br /></td></tr>
-<tr class="separator:aa2c44d7ed736b9a4c45a8f0e050947c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51ff6a6f843fe3c5db545fc6ac382aff"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#a51ff6a6f843fe3c5db545fc6ac382aff">AppendTilesToString</a> (Array2D&lt; <a class="el" href="namespace_m_pewsey_1_1_aycblok.html#abf3803592e3f896973e7a3f248b70097">PuzzleTile</a> &gt; tiles, StringBuilder builder)</td></tr>
+<tr class="memdesc:a51ff6a6f843fe3c5db545fc6ac382aff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the tiles string to the string builder.  <a href="class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#a51ff6a6f843fe3c5db545fc6ac382aff">More...</a><br /></td></tr>
+<tr class="separator:a51ff6a6f843fe3c5db545fc6ac382aff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbf82eb0a0565c11d8671939f5194e72"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespace_m_pewsey_1_1_aycblok.html#abf3803592e3f896973e7a3f248b70097">PuzzleTile</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#adbf82eb0a0565c11d8671939f5194e72">CharacterToTile</a> (char character)</td></tr>
+<tr class="memdesc:adbf82eb0a0565c11d8671939f5194e72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the puzzle tile corresponding to the specified character.  <a href="class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#adbf82eb0a0565c11d8671939f5194e72">More...</a><br /></td></tr>
+<tr class="separator:adbf82eb0a0565c11d8671939f5194e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad4404c989ed9f956a0927dfb1d71b9a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_m_pewsey_1_1_aycblok_1_1_raycast_hit.html">RaycastHit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#aad4404c989ed9f956a0927dfb1d71b9a">Raycast</a> (Array2D&lt; <a class="el" href="namespace_m_pewsey_1_1_aycblok.html#abf3803592e3f896973e7a3f248b70097">PuzzleTile</a> &gt; tiles, Vector2DInt position, Vector2DInt offset, <a class="el" href="namespace_m_pewsey_1_1_aycblok.html#abf3803592e3f896973e7a3f248b70097">PuzzleTile</a> blockingLayers)</td></tr>
 <tr class="memdesc:aad4404c989ed9f956a0927dfb1d71b9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a raycast in the specified offset direction until the first blocking layer is met.  <a href="class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#aad4404c989ed9f956a0927dfb1d71b9a">More...</a><br /></td></tr>
 <tr class="separator:aad4404c989ed9f956a0927dfb1d71b9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
-Static Private Member Functions</h2></td></tr>
-<tr class="memitem:ae58bd46a3d44f07f05c036ddd6fa8a50"><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#ae58bd46a3d44f07f05c036ddd6fa8a50">GetTileCharacter</a> (<a class="el" href="namespace_m_pewsey_1_1_aycblok.html#abf3803592e3f896973e7a3f248b70097">PuzzleTile</a> tile)</td></tr>
-<tr class="memdesc:ae58bd46a3d44f07f05c036ddd6fa8a50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the character corresponding to the tile.  <a href="class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#ae58bd46a3d44f07f05c036ddd6fa8a50">More...</a><br /></td></tr>
-<tr class="separator:ae58bd46a3d44f07f05c036ddd6fa8a50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8efab40421eda867aa64d275001451c3"><td class="memItemLeft" align="right" valign="top">static Array2D&lt; <a class="el" href="namespace_m_pewsey_1_1_aycblok.html#abf3803592e3f896973e7a3f248b70097">PuzzleTile</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#a8efab40421eda867aa64d275001451c3">StringsToTiles</a> (IList&lt; string &gt; lines)</td></tr>
+<tr class="memdesc:a8efab40421eda867aa64d275001451c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an array of puzzle tiles from a list of puzzle board line strings.  <a href="class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#a8efab40421eda867aa64d275001451c3">More...</a><br /></td></tr>
+<tr class="separator:a8efab40421eda867aa64d275001451c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a840083030acf9c06ceee5ffbc0a00e63"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#a840083030acf9c06ceee5ffbc0a00e63">TilesToString</a> (Array2D&lt; <a class="el" href="namespace_m_pewsey_1_1_aycblok.html#abf3803592e3f896973e7a3f248b70097">PuzzleTile</a> &gt; tiles)</td></tr>
+<tr class="memdesc:a840083030acf9c06ceee5ffbc0a00e63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the string representation for a puzzle board.  <a href="class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#a840083030acf9c06ceee5ffbc0a00e63">More...</a><br /></td></tr>
+<tr class="separator:a840083030acf9c06ceee5ffbc0a00e63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4037a4e9d0ff070a4a6b4f6bda2a4956"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#a4037a4e9d0ff070a4a6b4f6bda2a4956">TilesToTiledString</a> (IList&lt; Array2D&lt; <a class="el" href="namespace_m_pewsey_1_1_aycblok.html#abf3803592e3f896973e7a3f248b70097">PuzzleTile</a> &gt; &gt; tiles, int columns)</td></tr>
+<tr class="memdesc:a4037a4e9d0ff070a4a6b4f6bda2a4956"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the puzzle board strings in a tiled layout.  <a href="class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#a4037a4e9d0ff070a4a6b4f6bda2a4956">More...</a><br /></td></tr>
+<tr class="separator:a4037a4e9d0ff070a4a6b4f6bda2a4956"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c61ade07560fc3b95d2a6ec9e489793"><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#a7c61ade07560fc3b95d2a6ec9e489793">TileToCharacter</a> (<a class="el" href="namespace_m_pewsey_1_1_aycblok.html#abf3803592e3f896973e7a3f248b70097">PuzzleTile</a> tile)</td></tr>
+<tr class="memdesc:a7c61ade07560fc3b95d2a6ec9e489793"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the character corresponding to the tile.  <a href="class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#a7c61ade07560fc3b95d2a6ec9e489793">More...</a><br /></td></tr>
+<tr class="separator:a7c61ade07560fc3b95d2a6ec9e489793"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Contains general methods pertaining to areas of tiles, or puzzle boards. </p>
 
 <p class="definition">Definition at line <a class="el" href="_puzzle_board_8cs_source.html#l00012">12</a> of file <a class="el" href="_puzzle_board_8cs_source.html">PuzzleBoard.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a617aa05608aef399f21545cf32190e85" name="a617aa05608aef399f21545cf32190e85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a617aa05608aef399f21545cf32190e85">&#9670;&nbsp;</a></span>AddString()</h2>
+<a id="a51ff6a6f843fe3c5db545fc6ac382aff" name="a51ff6a6f843fe3c5db545fc6ac382aff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51ff6a6f843fe3c5db545fc6ac382aff">&#9670;&nbsp;</a></span>AppendTilesToString()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -143,7 +145,7 @@ Static Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void MPewsey.Aycblok.PuzzleBoard.AddString </td>
+          <td class="memname">static void MPewsey.Aycblok.PuzzleBoard.AppendTilesToString </td>
           <td>(</td>
           <td class="paramtype">Array2D&lt; <a class="el" href="namespace_m_pewsey_1_1_aycblok.html#abf3803592e3f896973e7a3f248b70097">PuzzleTile</a> &gt;&#160;</td>
           <td class="paramname"><em>tiles</em>, </td>
@@ -180,8 +182,8 @@ Static Private Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae0a87ce98b9c79239b972aef4d1556a0" name="ae0a87ce98b9c79239b972aef4d1556a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0a87ce98b9c79239b972aef4d1556a0">&#9670;&nbsp;</a></span>GetString()</h2>
+<a id="adbf82eb0a0565c11d8671939f5194e72" name="adbf82eb0a0565c11d8671939f5194e72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbf82eb0a0565c11d8671939f5194e72">&#9670;&nbsp;</a></span>CharacterToTile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -190,10 +192,10 @@ Static Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static string MPewsey.Aycblok.PuzzleBoard.GetString </td>
+          <td class="memname">static <a class="el" href="namespace_m_pewsey_1_1_aycblok.html#abf3803592e3f896973e7a3f248b70097">PuzzleTile</a> MPewsey.Aycblok.PuzzleBoard.CharacterToTile </td>
           <td>(</td>
-          <td class="paramtype">Array2D&lt; <a class="el" href="namespace_m_pewsey_1_1_aycblok.html#abf3803592e3f896973e7a3f248b70097">PuzzleTile</a> &gt;&#160;</td>
-          <td class="paramname"><em>tiles</em></td><td>)</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>character</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -204,104 +206,21 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the string representation for a puzzle board. </p>
+<p>Returns the puzzle tile corresponding to the specified character. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">tiles</td><td>The puzzle board tiles.</td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="_puzzle_board_8cs_source.html#l00043">43</a> of file <a class="el" href="_puzzle_board_8cs_source.html">PuzzleBoard.cs</a>.</p>
-
-</div>
-</div>
-<a id="ae58bd46a3d44f07f05c036ddd6fa8a50" name="ae58bd46a3d44f07f05c036ddd6fa8a50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae58bd46a3d44f07f05c036ddd6fa8a50">&#9670;&nbsp;</a></span>GetTileCharacter()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static char MPewsey.Aycblok.PuzzleBoard.GetTileCharacter </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_m_pewsey_1_1_aycblok.html#abf3803592e3f896973e7a3f248b70097">PuzzleTile</a>&#160;</td>
-          <td class="paramname"><em>tile</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the character corresponding to the tile. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">tile</td><td>The tile.</td></tr>
+    <tr><td class="paramname">character</td><td>The character.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">ArgumentException</td><td>Raised if the tile value is unhandled.</td></tr>
+    <tr><td class="paramname">ArgumentException</td><td>Raised for an unhandled character.</td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_board_8cs_source.html#l00143">143</a> of file <a class="el" href="_puzzle_board_8cs_source.html">PuzzleBoard.cs</a>.</p>
-
-</div>
-</div>
-<a id="aa2c44d7ed736b9a4c45a8f0e050947c5" name="aa2c44d7ed736b9a4c45a8f0e050947c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2c44d7ed736b9a4c45a8f0e050947c5">&#9670;&nbsp;</a></span>GetTiledString()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static string MPewsey.Aycblok.PuzzleBoard.GetTiledString </td>
-          <td>(</td>
-          <td class="paramtype">IList&lt; Array2D&lt; <a class="el" href="namespace_m_pewsey_1_1_aycblok.html#abf3803592e3f896973e7a3f248b70097">PuzzleTile</a> &gt; &gt;&#160;</td>
-          <td class="paramname"><em>tiles</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>columns</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the puzzle board strings in a tiled layout. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">tiles</td><td>A list of move puzzle boards.</td></tr>
-    <tr><td class="paramname">columns</td><td>The number of columns in the layout.</td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="_puzzle_board_8cs_source.html#l00056">56</a> of file <a class="el" href="_puzzle_board_8cs_source.html">PuzzleBoard.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_board_8cs_source.html#l00171">171</a> of file <a class="el" href="_puzzle_board_8cs_source.html">PuzzleBoard.cs</a>.</p>
 
 </div>
 </div>
@@ -369,6 +288,173 @@ Static Private Member Functions</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_puzzle_board_8cs_source.html#l00022">22</a> of file <a class="el" href="_puzzle_board_8cs_source.html">PuzzleBoard.cs</a>.</p>
+
+</div>
+</div>
+<a id="a8efab40421eda867aa64d275001451c3" name="a8efab40421eda867aa64d275001451c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8efab40421eda867aa64d275001451c3">&#9670;&nbsp;</a></span>StringsToTiles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Array2D&lt; <a class="el" href="namespace_m_pewsey_1_1_aycblok.html#abf3803592e3f896973e7a3f248b70097">PuzzleTile</a> &gt; MPewsey.Aycblok.PuzzleBoard.StringsToTiles </td>
+          <td>(</td>
+          <td class="paramtype">IList&lt; string &gt;&#160;</td>
+          <td class="paramname"><em>lines</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns an array of puzzle tiles from a list of puzzle board line strings. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lines</td><td>A list of puzzle board line strings.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArgumentException</td><td>Raised if the puzzle board line strings do not all have equal length.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_puzzle_board_8cs_source.html#l00143">143</a> of file <a class="el" href="_puzzle_board_8cs_source.html">PuzzleBoard.cs</a>.</p>
+
+</div>
+</div>
+<a id="a840083030acf9c06ceee5ffbc0a00e63" name="a840083030acf9c06ceee5ffbc0a00e63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a840083030acf9c06ceee5ffbc0a00e63">&#9670;&nbsp;</a></span>TilesToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static string MPewsey.Aycblok.PuzzleBoard.TilesToString </td>
+          <td>(</td>
+          <td class="paramtype">Array2D&lt; <a class="el" href="namespace_m_pewsey_1_1_aycblok.html#abf3803592e3f896973e7a3f248b70097">PuzzleTile</a> &gt;&#160;</td>
+          <td class="paramname"><em>tiles</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the string representation for a puzzle board. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tiles</td><td>The puzzle board tiles.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_puzzle_board_8cs_source.html#l00043">43</a> of file <a class="el" href="_puzzle_board_8cs_source.html">PuzzleBoard.cs</a>.</p>
+
+</div>
+</div>
+<a id="a4037a4e9d0ff070a4a6b4f6bda2a4956" name="a4037a4e9d0ff070a4a6b4f6bda2a4956"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4037a4e9d0ff070a4a6b4f6bda2a4956">&#9670;&nbsp;</a></span>TilesToTiledString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static string MPewsey.Aycblok.PuzzleBoard.TilesToTiledString </td>
+          <td>(</td>
+          <td class="paramtype">IList&lt; Array2D&lt; <a class="el" href="namespace_m_pewsey_1_1_aycblok.html#abf3803592e3f896973e7a3f248b70097">PuzzleTile</a> &gt; &gt;&#160;</td>
+          <td class="paramname"><em>tiles</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>columns</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the puzzle board strings in a tiled layout. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tiles</td><td>A list of move puzzle boards.</td></tr>
+    <tr><td class="paramname">columns</td><td>The number of columns in the layout.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_puzzle_board_8cs_source.html#l00056">56</a> of file <a class="el" href="_puzzle_board_8cs_source.html">PuzzleBoard.cs</a>.</p>
+
+</div>
+</div>
+<a id="a7c61ade07560fc3b95d2a6ec9e489793" name="a7c61ade07560fc3b95d2a6ec9e489793"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c61ade07560fc3b95d2a6ec9e489793">&#9670;&nbsp;</a></span>TileToCharacter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static char MPewsey.Aycblok.PuzzleBoard.TileToCharacter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_m_pewsey_1_1_aycblok.html#abf3803592e3f896973e7a3f248b70097">PuzzleTile</a>&#160;</td>
+          <td class="paramname"><em>tile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the character corresponding to the tile. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tile</td><td>The tile.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArgumentException</td><td>Raised if the tile value is unhandled.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_puzzle_board_8cs_source.html#l00203">203</a> of file <a class="el" href="_puzzle_board_8cs_source.html">PuzzleBoard.cs</a>.</p>
 
 </div>
 </div>

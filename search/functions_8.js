@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['targetgarbageblocks_0',['TargetGarbageBlocks',['../class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_garbage_generator.html#ab71437bdbbddeaa3f8c6683f6bc50685',1,'MPewsey::Aycblok::Generators::PuzzleGarbageGenerator']]],
-  ['tostring_1',['ToString',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_layout.html#a540e6a1bbbf914890fc859319aad419c',1,'MPewsey.Aycblok.PuzzleLayout.ToString()'],['../class_m_pewsey_1_1_aycblok_1_1_puzzle_move.html#a59d1c79f88de931600b127c672bef5d1',1,'MPewsey.Aycblok.PuzzleMove.ToString()'],['../struct_m_pewsey_1_1_aycblok_1_1_raycast_hit.html#ae28857a6d3018194c8bcb1887343e7ab',1,'MPewsey.Aycblok.RaycastHit.ToString()']]]
+  ['sidetilespermitpushblock_0',['SideTilesPermitPushBlock',['../class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_move_generator.html#a6a5a6ca020a8c5b1a48a3f8618f9cb26',1,'MPewsey::Aycblok::Generators::PuzzleMoveGenerator']]],
+  ['stoptileoffset_1',['StopTileOffset',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_move.html#ae4bb4cc63517ce629e1378026541e40c',1,'MPewsey::Aycblok::PuzzleMove']]],
+  ['stoptileposition_2',['StopTilePosition',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_move.html#af3922ac945adc0bf80cf8a4b9dcbc15e',1,'MPewsey::Aycblok::PuzzleMove']]],
+  ['stringstotiles_3',['StringsToTiles',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#a8efab40421eda867aa64d275001451c3',1,'MPewsey::Aycblok::PuzzleBoard']]]
 ];

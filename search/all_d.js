@@ -5,5 +5,6 @@ var searchData=
   ['stopblock_2',['StopBlock',['../namespace_m_pewsey_1_1_aycblok.html#abf3803592e3f896973e7a3f248b70097a823865c0e69094687d36d3051c76e737',1,'MPewsey::Aycblok']]],
   ['stoptile_3',['StopTile',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_move.html#a210258b11e5aab78efb5be24ae07cd70',1,'MPewsey::Aycblok::PuzzleMove']]],
   ['stoptileoffset_4',['StopTileOffset',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_move.html#ae4bb4cc63517ce629e1378026541e40c',1,'MPewsey::Aycblok::PuzzleMove']]],
-  ['stoptileposition_5',['StopTilePosition',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_move.html#af3922ac945adc0bf80cf8a4b9dcbc15e',1,'MPewsey::Aycblok::PuzzleMove']]]
+  ['stoptileposition_5',['StopTilePosition',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_move.html#af3922ac945adc0bf80cf8a4b9dcbc15e',1,'MPewsey::Aycblok::PuzzleMove']]],
+  ['stringstotiles_6',['StringsToTiles',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#a8efab40421eda867aa64d275001451c3',1,'MPewsey::Aycblok::PuzzleBoard']]]
 ];
