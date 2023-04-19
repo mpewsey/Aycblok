@@ -12,6 +12,16 @@ namespace MPewsey.Aycblok
     public static class PuzzleBoard
     {
         /// <summary>
+        /// The character to tile dictionary.
+        /// </summary>
+        private static Dictionary<char, PuzzleTile> CharacterToTileDictionary { get; } = DefaultCharacterToTileDictionary();
+
+        /// <summary>
+        /// The tile to character dictionary.
+        /// </summary>
+        private static Dictionary<PuzzleTile, char> TileToCharacterDictionary { get; } = DefaultTileToCharacterDictionary();
+
+        /// <summary>
         /// Performs a raycast in the specified offset direction until the first blocking layer is met.
         /// </summary>
         /// <param name="tiles">The array of tiles.</param>
@@ -53,11 +63,13 @@ namespace MPewsey.Aycblok
         /// </summary>
         /// <param name="tiles">A list of move puzzle boards.</param>
         /// <param name="columns">The number of columns in the layout.</param>
-        public static string TilesToTiledString(IList<Array2D<PuzzleTile>> tiles, int columns)
+        /// <param name="tileToCharacter">A function converting a tile to a character. If null, the default delegate will be used.</param>
+        public static string TilesToTiledString(IList<Array2D<PuzzleTile>> tiles, int columns, Func<PuzzleTile, char> tileToCharacter = null)
         {
             if (tiles.Count == 0)
                 return string.Empty;
 
+            tileToCharacter = tileToCharacter ?? TileToCharacter;
             const int spaceCount = 3;
             columns = Math.Max(columns, 1);
             var builder = new StringBuilder();
@@ -99,7 +111,7 @@ namespace MPewsey.Aycblok
                         // Add row tile strings
                         for (int j = 0; j < tiles[0].Columns; j++)
                         {
-                            builder.Append(TileToCharacter(tiles[index][i, j])).Append(' ');
+                            builder.Append(tileToCharacter.Invoke(tiles[index][i, j])).Append(' ');
                         }
 
                         // Add separator
@@ -111,7 +123,7 @@ namespace MPewsey.Aycblok
                 }
 
                 if (row < rows - 1)
-                    builder.Append("\n");
+                    builder.Append('\n');
             }
 
             return builder.ToString();
@@ -122,13 +134,16 @@ namespace MPewsey.Aycblok
         /// </summary>
         /// <param name="tiles">The puzzle board tiles.</param>
         /// <param name="builder">The string builder.</param>
-        public static void AppendTilesToString(Array2D<PuzzleTile> tiles, StringBuilder builder)
+        /// <param name="tileToCharacter">A function converting a tile to a character. If null, the default delegate will be used.</param>
+        public static void AppendTilesToString(Array2D<PuzzleTile> tiles, StringBuilder builder, Func<PuzzleTile, char> tileToCharacter = null)
         {
+            tileToCharacter = tileToCharacter ?? TileToCharacter;
+
             for (int i = 0; i < tiles.Rows; i++)
             {
                 for (int j = 0; j < tiles.Columns; j++)
                 {
-                    builder.Append(TileToCharacter(tiles[i, j])).Append(' ');
+                    builder.Append(tileToCharacter.Invoke(tiles[i, j])).Append(' ');
                 }
 
                 builder.Append('\n');
@@ -139,12 +154,14 @@ namespace MPewsey.Aycblok
         /// Returns an array of puzzle tiles from a list of puzzle board line strings.
         /// </summary>
         /// <param name="lines">A list of puzzle board line strings.</param>
+        /// <param name="characterToTile">A function converting a character to a tile. If null, the default delegate will be used.</param>
         /// <exception cref="ArgumentException">Raised if the puzzle board line strings do not all have equal length.</exception>
-        public static Array2D<PuzzleTile> StringsToTiles(IList<string> lines)
+        public static Array2D<PuzzleTile> StringsToTiles(IList<string> lines, Func<char, PuzzleTile> characterToTile = null)
         {
             if (lines.Count == 0 || lines[0].Length == 0)
                 return new Array2D<PuzzleTile>();
 
+            characterToTile = characterToTile ?? CharacterToTile;
             var result = new Array2D<PuzzleTile>(lines.Count, lines[0].Length);
 
             for (int i = 0; i < lines.Count; i++)
@@ -156,8 +173,42 @@ namespace MPewsey.Aycblok
 
                 for (int j = 0; j < line.Length; j++)
                 {
-                    result[i, j] = CharacterToTile(line[j]);
+                    result[i, j] = characterToTile.Invoke(line[j]);
                 }
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Returns a new copy of the default character to tile dictionary.
+        /// </summary>
+        public static Dictionary<char, PuzzleTile> DefaultCharacterToTileDictionary()
+        {
+            return new Dictionary<char, PuzzleTile>
+            {
+                { '.', PuzzleTile.None },
+                { '#', PuzzleTile.StopBlock },
+                { '%', PuzzleTile.BreakBlock },
+                { 'o', PuzzleTile.PushBlock },
+                { '$', PuzzleTile.Goal },
+                { '*', PuzzleTile.Goal | PuzzleTile.PushBlock },
+                { '!', PuzzleTile.Void },
+                { '+', PuzzleTile.BlockVoid },
+                { '@', PuzzleTile.PusherVoid },
+            };
+        }
+
+        /// <summary>
+        /// Returns a new copy of the default tile to character dictionary.
+        /// </summary>
+        public static Dictionary<PuzzleTile, char> DefaultTileToCharacterDictionary()
+        {
+            var result = new Dictionary<PuzzleTile, char>(CharacterToTileDictionary.Count);
+
+            foreach (var pair in CharacterToTileDictionary)
+            {
+                result.Add(pair.Value, pair.Key);
             }
 
             return result;
@@ -170,29 +221,7 @@ namespace MPewsey.Aycblok
         /// <exception cref="ArgumentException">Raised for an unhandled character.</exception>
         public static PuzzleTile CharacterToTile(char character)
         {
-            switch (character)
-            {
-                case '.':
-                    return PuzzleTile.None;
-                case '#':
-                    return PuzzleTile.StopBlock;
-                case '%':
-                    return PuzzleTile.BreakBlock;
-                case 'o':
-                    return PuzzleTile.PushBlock;
-                case '$':
-                    return PuzzleTile.Goal;
-                case '*':
-                    return PuzzleTile.Goal | PuzzleTile.PushBlock;
-                case '!':
-                    return PuzzleTile.Void;
-                case '+':
-                    return PuzzleTile.BlockVoid;
-                case '@':
-                    return PuzzleTile.PusherVoid;
-                default:
-                    throw new ArgumentException($"Unhandled character: {character}.");
-            }
+            return CharacterToTileDictionary[character];
         }
 
         /// <summary>
@@ -203,30 +232,7 @@ namespace MPewsey.Aycblok
         public static char TileToCharacter(PuzzleTile tile)
         {
             var layers = PuzzleTile.StopBlock | PuzzleTile.BreakBlock | PuzzleTile.PushBlock | PuzzleTile.Goal | PuzzleTile.Void;
-
-            switch (tile & layers)
-            {
-                case PuzzleTile.None:
-                    return '.';
-                case PuzzleTile.StopBlock:
-                    return '#';
-                case PuzzleTile.BreakBlock:
-                    return '%';
-                case PuzzleTile.PushBlock:
-                    return 'o';
-                case PuzzleTile.Goal:
-                    return '$';
-                case PuzzleTile.Goal | PuzzleTile.PushBlock:
-                    return '*';
-                case PuzzleTile.Void:
-                    return '!';
-                case PuzzleTile.BlockVoid:
-                    return '+';
-                case PuzzleTile.PusherVoid:
-                    return '@';
-                default:
-                    throw new ArgumentException($"Unhandled tile type: {tile}.");
-            }
+            return TileToCharacterDictionary[tile & layers];
         }
     }
 }
