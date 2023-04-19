@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['maxiterations_0',['MaxIterations',['../class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_move_generator.html#aac23206b7869395b97da8832c1ca9425',1,'MPewsey::Aycblok::Generators::PuzzleMoveGenerator']]],
-  ['moves_1',['Moves',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_layout.html#a3ee9cc1586c1934df9fc0405eb746a63',1,'MPewsey::Aycblok::PuzzleLayout']]]
+  ['layout_0',['Layout',['../class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_garbage_generator.html#a093dafbb1c3e5bf59ba7ed1137b46bc3',1,'MPewsey.Aycblok.Generators.PuzzleGarbageGenerator.Layout()'],['../class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_move_generator.html#a45adad5bdae51f0a21173426469d9359',1,'MPewsey.Aycblok.Generators.PuzzleMoveGenerator.Layout()']]]
 ];

@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['targetgarbageblocks_0',['TargetGarbageBlocks',['../class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_garbage_generator.html#ab71437bdbbddeaa3f8c6683f6bc50685',1,'MPewsey::Aycblok::Generators::PuzzleGarbageGenerator']]],
-  ['tiledmovereport_1',['TiledMoveReport',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_layout.html#a41dd80a0d14be3ab695631cfc95f6e68',1,'MPewsey::Aycblok::PuzzleLayout']]],
-  ['tilestostring_2',['TilesToString',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#a840083030acf9c06ceee5ffbc0a00e63',1,'MPewsey::Aycblok::PuzzleBoard']]],
-  ['tilestotiledstring_3',['TilesToTiledString',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#a4037a4e9d0ff070a4a6b4f6bda2a4956',1,'MPewsey::Aycblok::PuzzleBoard']]],
-  ['tiletocharacter_4',['TileToCharacter',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#a7c61ade07560fc3b95d2a6ec9e489793',1,'MPewsey::Aycblok::PuzzleBoard']]],
-  ['tostring_5',['ToString',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_layout.html#a540e6a1bbbf914890fc859319aad419c',1,'MPewsey.Aycblok.PuzzleLayout.ToString()'],['../class_m_pewsey_1_1_aycblok_1_1_puzzle_move.html#a59d1c79f88de931600b127c672bef5d1',1,'MPewsey.Aycblok.PuzzleMove.ToString()'],['../struct_m_pewsey_1_1_aycblok_1_1_raycast_hit.html#ae28857a6d3018194c8bcb1887343e7ab',1,'MPewsey.Aycblok.RaycastHit.ToString()']]]
+  ['sidetilespermitpushblock_0',['SideTilesPermitPushBlock',['../class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_move_generator.html#a6a5a6ca020a8c5b1a48a3f8618f9cb26',1,'MPewsey::Aycblok::Generators::PuzzleMoveGenerator']]],
+  ['stoptileoffset_1',['StopTileOffset',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_move.html#ae4bb4cc63517ce629e1378026541e40c',1,'MPewsey::Aycblok::PuzzleMove']]],
+  ['stoptileposition_2',['StopTilePosition',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_move.html#af3922ac945adc0bf80cf8a4b9dcbc15e',1,'MPewsey::Aycblok::PuzzleMove']]],
+  ['stringstotiles_3',['StringsToTiles',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#ac6c947070b49b5771b03f2577c5cc3d8',1,'MPewsey::Aycblok::PuzzleBoard']]]
 ];

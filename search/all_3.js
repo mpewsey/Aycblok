@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['findgoalpositions_0',['FindGoalPositions',['../class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_move_generator.html#a53d1b190aefbc661c963d4c5e94bafe9',1,'MPewsey::Aycblok::Generators::PuzzleMoveGenerator']]],
-  ['findopenpositions_1',['FindOpenPositions',['../class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_garbage_generator.html#a1218355e3687027ca2f332c7e867b28b',1,'MPewsey::Aycblok::Generators::PuzzleGarbageGenerator']]],
-  ['findpossiblegoalpositions_2',['FindPossibleGoalPositions',['../class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_goal_generator.html#a833ec1df77a4b0b7e25915e49bb387ce',1,'MPewsey::Aycblok::Generators::PuzzleGoalGenerator']]],
-  ['fromposition_3',['FromPosition',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_move.html#ac2becf3431e48ad90ddbcc3c9d279f5b',1,'MPewsey::Aycblok::PuzzleMove']]]
+  ['defaultcharactertotiledictionary_0',['DefaultCharacterToTileDictionary',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#a8839bbdb77edf5d2050bb12024729ade',1,'MPewsey::Aycblok::PuzzleBoard']]],
+  ['defaulttiletocharacterdictionary_1',['DefaultTileToCharacterDictionary',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#af597a5765a0ca3cc05987760c95ee03e',1,'MPewsey::Aycblok::PuzzleBoard']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hittile_0',['HitTile',['../struct_m_pewsey_1_1_aycblok_1_1_raycast_hit.html#acfe01d436f6e8f3bd97e91613a1ab6d0',1,'MPewsey::Aycblok::RaycastHit']]]
+  ['goalsize_0',['GoalSize',['../class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_goal_generator.html#a4d12f67cf7d692bf69882b5b7735ffa2',1,'MPewsey::Aycblok::Generators::PuzzleGoalGenerator']]]
 ];
