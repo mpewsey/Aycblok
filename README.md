@@ -4,7 +4,7 @@
 [![Docs](https://github.com/mpewsey/Aycblok/actions/workflows/docs.yml/badge.svg?event=push)](https://mpewsey.github.io/Aycblok)
 [![codecov](https://codecov.io/gh/mpewsey/Aycblok/branch/main/graph/badge.svg?token=Q1LDU83FAQ)](https://codecov.io/gh/mpewsey/Aycblok)
 ![.NET Standard](https://img.shields.io/badge/.NET%20Standard-2.0-blue)
-[![NuGet](https://img.shields.io/nuget/v/Aycblok?label=NuGet)](https://www.nuget.org/packages/MPewsey.Aycblok/)
+[![NuGet](https://img.shields.io/nuget/v/MPewsey.Aycblok?label=NuGet)](https://www.nuget.org/packages/MPewsey.Aycblok/)
 
 ## About
 
