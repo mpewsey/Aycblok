@@ -1,5 +1,4 @@
 ﻿using MPewsey.Common.Collections;
-using MPewsey.Common.Logging;
 using MPewsey.Common.Mathematics;
 using MPewsey.Common.Pipelines;
 using MPewsey.Common.Random;
@@ -102,12 +101,13 @@ namespace MPewsey.Aycblok.Generators
         /// * PuzzleLayout - The generated layout or null if unsuccessful.
         /// </summary>
         /// <param name="results">The generation pipeline results to which artifacts will be added.</param>
+        /// <param name="logger">The logging action. Ignored if null.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
-        public bool ApplyStep(PipelineResults results, CancellationToken cancellationToken)
+        public bool ApplyStep(PipelineResults results, Action<string> logger, CancellationToken cancellationToken)
         {
             var randomSeed = results.GetArgument<RandomSeed>("RandomSeed");
             var tiles = results.GetArgument<Array2D<PuzzleTile>>("PuzzleArea");
-            var layout = GenerateLayout(tiles, randomSeed);
+            var layout = GenerateLayout(tiles, randomSeed, logger);
             results.SetOutput("PuzzleLayout", layout);
             return layout != null;
         }
@@ -118,9 +118,10 @@ namespace MPewsey.Aycblok.Generators
         /// </summary>
         /// <param name="tiles">The puzzle area tiles. These tiles should contain at least one goal.</param>
         /// <param name="randomSeed">The random seed.</param>
-        public PuzzleLayout GenerateLayout(Array2D<PuzzleTile> tiles, RandomSeed randomSeed)
+        /// <param name="logger">The logging action.</param>
+        public PuzzleLayout GenerateLayout(Array2D<PuzzleTile> tiles, RandomSeed randomSeed, Action<string> logger)
         {
-            Logger.Log("[Puzzle Move Generator] Generating puzzle moves...");
+            logger?.Invoke("[Puzzle Move Generator] Generating puzzle moves...");
             Initialize(randomSeed);
 
             for (int i = 1; i <= MaxIterations; i++)
@@ -131,14 +132,14 @@ namespace MPewsey.Aycblok.Generators
                 if (AddMoves())
                 {
                     Layout.Moves.Reverse();
-                    Logger.Log($"[Puzzle Move Generator] Puzzle move generation complete in {i} attempts.");
+                    logger?.Invoke($"[Puzzle Move Generator] Puzzle move generation complete in {i} attempts.");
                     return Layout;
                 }
 
-                Logger.Log("[Puzzle Move Generator] Target moves not met. Restarting...");
+                logger?.Invoke("[Puzzle Move Generator] Target moves not met. Restarting...");
             }
 
-            Logger.Log("[Puzzle Move Generator] Failed to generate puzzle moves.");
+            logger?.Invoke("[Puzzle Move Generator] Failed to generate puzzle moves.");
             return null;
         }
 

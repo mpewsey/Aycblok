@@ -1,5 +1,4 @@
 ﻿using MPewsey.Common.Collections;
-using MPewsey.Common.Logging;
 using MPewsey.Common.Mathematics;
 using MPewsey.Common.Pipelines;
 using MPewsey.Common.Random;
@@ -61,12 +60,13 @@ namespace MPewsey.Aycblok.Generators
         /// * PuzzleArea - A copy of the puzzle area with the goal added.
         /// </summary>
         /// <param name="results">The generation pipeline results to which artifacts will be added.</param>
+        /// <param name="logger">The logging action. Ignored if null.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
-        public bool ApplyStep(PipelineResults results, CancellationToken cancellationToken)
+        public bool ApplyStep(PipelineResults results, Action<string> logger, CancellationToken cancellationToken)
         {
             var randomSeed = results.GetArgument<RandomSeed>("RandomSeed");
             var puzzleArea = results.GetArgument<Array2D<PuzzleTile>>("PuzzleArea");
-            results.SetOutput("PuzzleArea", GenerateGoal(puzzleArea, randomSeed));
+            results.SetOutput("PuzzleArea", GenerateGoal(puzzleArea, randomSeed, logger));
             return true;
         }
 
@@ -75,12 +75,13 @@ namespace MPewsey.Aycblok.Generators
         /// </summary>
         /// <param name="puzzleArea">The base puzzle area.</param>
         /// <param name="randomSeed">The random seed.</param>
-        public Array2D<PuzzleTile> GenerateGoal(Array2D<PuzzleTile> puzzleArea, RandomSeed randomSeed)
+        /// <param name="logger">The logging action.</param>
+        public Array2D<PuzzleTile> GenerateGoal(Array2D<PuzzleTile> puzzleArea, RandomSeed randomSeed, Action<string> logger)
         {
-            Logger.Log("[Puzzle Goal Generator] Generating puzzle goals...");
+            logger?.Invoke("[Puzzle Goal Generator] Generating puzzle goals...");
             Initialize(puzzleArea, randomSeed);
             AddGoal();
-            Logger.Log("[Puzzle Goal Generator] Goal generation complete.");
+            logger?.Invoke("[Puzzle Goal Generator] Goal generation complete.");
             return PuzzleArea;
         }
 

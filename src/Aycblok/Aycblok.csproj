@@ -14,7 +14,7 @@
 	<RepositoryUrl>https://github.com/mpewsey/Aycblok</RepositoryUrl>
 	<PackageTags>procedural-generation;videogames</PackageTags>
 	<PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
-	<VersionPrefix>0.0.1</VersionPrefix>
+	<VersionPrefix>0.0.2</VersionPrefix>
 	<Configurations>Debug;Release</Configurations>
 	<PackageProjectUrl>https://github.com/mpewsey/Aycblok</PackageProjectUrl>
 	<GenerateDocumentationFile>True</GenerateDocumentationFile>
@@ -32,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MPewsey.Common" Version="0.0.9" />
+    <PackageReference Include="MPewsey.Common" Version="0.0.12" />
   </ItemGroup>
 
 </Project>

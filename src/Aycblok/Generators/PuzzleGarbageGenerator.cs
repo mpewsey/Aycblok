@@ -1,5 +1,4 @@
 ﻿using MPewsey.Common.Collections;
-using MPewsey.Common.Logging;
 using MPewsey.Common.Mathematics;
 using MPewsey.Common.Pipelines;
 using MPewsey.Common.Random;
@@ -63,12 +62,13 @@ namespace MPewsey.Aycblok.Generators
         /// * RandomSeed - The random seed.
         /// </summary>
         /// <param name="results">The generation pipeline results to which artifacts will be added.</param>
+        /// <param name="logger">The loggin action. Ignored if null.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
-        public bool ApplyStep(PipelineResults results, CancellationToken cancellationToken)
+        public bool ApplyStep(PipelineResults results, Action<string> logger, CancellationToken cancellationToken)
         {
             var randomSeed = results.GetArgument<RandomSeed>("RandomSeed");
             var layout = results.GetArgument<PuzzleLayout>("PuzzleLayout");
-            GenerateGarbage(layout, randomSeed);
+            GenerateGarbage(layout, randomSeed, logger);
             return true;
         }
 
@@ -77,12 +77,13 @@ namespace MPewsey.Aycblok.Generators
         /// </summary>
         /// <param name="layout">The layout.</param>
         /// <param name="randomSeed">The random seed.</param>
-        public void GenerateGarbage(PuzzleLayout layout, RandomSeed randomSeed)
+        /// <param name="logger">The logging action.</param>
+        public void GenerateGarbage(PuzzleLayout layout, RandomSeed randomSeed, Action<string> logger)
         {
-            Logger.Log("[Puzzle Garbage Generator] Generating garbage blocks...");
+            logger?.Invoke("[Puzzle Garbage Generator] Generating garbage blocks...");
             Initialize(layout, randomSeed);
             AddGarbage();
-            Logger.Log("[Puzzle Garbage Generator] Garbage block generation complete.");
+            logger?.Invoke("[Puzzle Garbage Generator] Garbage block generation complete.");
         }
 
         /// <summary>
