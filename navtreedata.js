@@ -28,7 +28,6 @@ var NAVTREE =
     [ "About", "index.html#autotoc_md1", null ],
     [ "Features", "index.html#autotoc_md2", null ],
     [ "Generation Pipeline Example", "index.html#autotoc_md3", null ],
-    [ "Generation Logger Example", "index.html#autotoc_md4", null ],
     [ "Packages", "namespaces.html", [
       [ "Packages", "namespaces.html", "namespaces_dup" ],
       [ "Package Functions", "namespacemembers.html", [
