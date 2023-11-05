@@ -72,19 +72,3 @@ var pipeline = new Pipeline(
 var results = pipeline.Run(args);
 var layout = results.GetOutput<PuzzleLayout>("PuzzleLayout");
 ```
-
-## Generation Logger Example
-
-The generators include logging messages that can be subscribed to by adding a delegate to the `Logger`, as shown in the below example.
-
-```Logger.cs
-// Have the messages printed to the console.
-Logger.AddListener(Console.WriteLine);
-
-// Or added to a list.
-var messages = new List<string>();
-Logger.AddListener(messages.Add);
-
-// Make sure to have your objects unsubscribe from the event to prevent memory leaks.
-Logger.RemoveListener(messages.Add);
-```
