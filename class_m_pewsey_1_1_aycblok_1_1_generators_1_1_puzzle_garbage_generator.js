@@ -2,9 +2,9 @@ var class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_garbage_generator =
 [
     [ "PuzzleGarbageGenerator", "class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_garbage_generator.html#a96d1c422efaaa51cc90d2d5208b544d6", null ],
     [ "AddGarbage", "class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_garbage_generator.html#a3d0933801fa41eb2da311f4b817f0b76", null ],
-    [ "ApplyStep", "class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_garbage_generator.html#acec2f8d2cdc9d62c813c6efe77f9e380", null ],
+    [ "ApplyStep", "class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_garbage_generator.html#a4b17dc1f003c970a3b4df1b0a84fc7d5", null ],
     [ "FindOpenPositions", "class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_garbage_generator.html#a1218355e3687027ca2f332c7e867b28b", null ],
-    [ "GenerateGarbage", "class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_garbage_generator.html#acda485b65db74c65a493d9d288a9d960", null ],
+    [ "GenerateGarbage", "class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_garbage_generator.html#afb82a69aaa41e8bc794743fd71ce9d0c", null ],
     [ "GetMarkedTiles", "class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_garbage_generator.html#a38e033647e725bae7f676c41f3689eba", null ],
     [ "GetRandomBlock", "class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_garbage_generator.html#a80be148856f5c269855ae6437ce2e6cf", null ],
     [ "Initialize", "class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_garbage_generator.html#adb8b2bed6d5df8810860a707187af7b3", null ],

@@ -118,12 +118,12 @@ Inheritance diagram for MPewsey.Aycblok.Generators.PuzzleMoveGenerator:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad1dbf75016841a9bba595a4a8c9ea1d8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_move_generator.html#ad1dbf75016841a9bba595a4a8c9ea1d8">ApplyStep</a> (PipelineResults results, CancellationToken cancellationToken)</td></tr>
-<tr class="memdesc:ad1dbf75016841a9bba595a4a8c9ea1d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the generation step. The step takes the following inputs:  <a href="class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_move_generator.html#ad1dbf75016841a9bba595a4a8c9ea1d8">More...</a><br /></td></tr>
-<tr class="separator:ad1dbf75016841a9bba595a4a8c9ea1d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a674f95bc6c930a92262b3b68d68ccc75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_m_pewsey_1_1_aycblok_1_1_puzzle_layout.html">PuzzleLayout</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_move_generator.html#a674f95bc6c930a92262b3b68d68ccc75">GenerateLayout</a> (Array2D&lt; <a class="el" href="namespace_m_pewsey_1_1_aycblok.html#abf3803592e3f896973e7a3f248b70097">PuzzleTile</a> &gt; tiles, <a class="el" href="class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_move_generator.html#af6bc18179518d86be4bc35a7568e906c">RandomSeed</a> randomSeed)</td></tr>
-<tr class="memdesc:a674f95bc6c930a92262b3b68d68ccc75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a new puzzle layout based on the specified input area and returns it. Returns null if unsuccessful.  <a href="class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_move_generator.html#a674f95bc6c930a92262b3b68d68ccc75">More...</a><br /></td></tr>
-<tr class="separator:a674f95bc6c930a92262b3b68d68ccc75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22c1e68f4a5979633a3f639386e8843d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_move_generator.html#a22c1e68f4a5979633a3f639386e8843d">ApplyStep</a> (PipelineResults results, Action&lt; string &gt; logger, CancellationToken cancellationToken)</td></tr>
+<tr class="memdesc:a22c1e68f4a5979633a3f639386e8843d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the generation step. The step takes the following inputs:  <a href="class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_move_generator.html#a22c1e68f4a5979633a3f639386e8843d">More...</a><br /></td></tr>
+<tr class="separator:a22c1e68f4a5979633a3f639386e8843d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acefcbc12d03c1ed62b0188b5e9b55d56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_m_pewsey_1_1_aycblok_1_1_puzzle_layout.html">PuzzleLayout</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_move_generator.html#acefcbc12d03c1ed62b0188b5e9b55d56">GenerateLayout</a> (Array2D&lt; <a class="el" href="namespace_m_pewsey_1_1_aycblok.html#abf3803592e3f896973e7a3f248b70097">PuzzleTile</a> &gt; tiles, <a class="el" href="class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_move_generator.html#af6bc18179518d86be4bc35a7568e906c">RandomSeed</a> randomSeed, Action&lt; string &gt; logger)</td></tr>
+<tr class="memdesc:acefcbc12d03c1ed62b0188b5e9b55d56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a new puzzle layout based on the specified input area and returns it. Returns null if unsuccessful.  <a href="class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_move_generator.html#acefcbc12d03c1ed62b0188b5e9b55d56">More...</a><br /></td></tr>
+<tr class="separator:acefcbc12d03c1ed62b0188b5e9b55d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b9c909cb6502243e81ce3e6ee7ac2e8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_move_generator.html#a1b9c909cb6502243e81ce3e6ee7ac2e8">PuzzleMoveGenerator</a> (int pushBlockCount, int targetPushCount, bool preventReversals=true, int maxIterations=1000)</td></tr>
 <tr class="memdesc:a1b9c909cb6502243e81ce3e6ee7ac2e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new generator.  <a href="class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_move_generator.html#a1b9c909cb6502243e81ce3e6ee7ac2e8">More...</a><br /></td></tr>
 <tr class="separator:a1b9c909cb6502243e81ce3e6ee7ac2e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -231,7 +231,7 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A class for procedurally generating the a <a class="el" href="class_m_pewsey_1_1_aycblok_1_1_puzzle_layout.html" title="Contains information pertaining to a puzzle layout and its moves to solve.">PuzzleLayout</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00016">16</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00015">15</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1b9c909cb6502243e81ce3e6ee7ac2e8" name="a1b9c909cb6502243e81ce3e6ee7ac2e8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1b9c909cb6502243e81ce3e6ee7ac2e8">&#9670;&nbsp;</a></span>PuzzleMoveGenerator()</h2>
@@ -282,7 +282,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00068">68</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00067">67</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -319,7 +319,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00431">431</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00432">432</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -348,7 +348,7 @@ Private Attributes</h2></td></tr>
 
 <p>Adds moves until the target push count is met. Returns true if successful. </p>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00197">197</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00198">198</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -377,7 +377,7 @@ Private Attributes</h2></td></tr>
 
 <p>Adds a move for a random push block. Returns true if successful. </p>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00217">217</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00218">218</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -412,7 +412,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00179">179</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00180">180</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -459,12 +459,12 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00167">167</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00168">168</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
-<a id="ad1dbf75016841a9bba595a4a8c9ea1d8" name="ad1dbf75016841a9bba595a4a8c9ea1d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1dbf75016841a9bba595a4a8c9ea1d8">&#9670;&nbsp;</a></span>ApplyStep()</h2>
+<a id="a22c1e68f4a5979633a3f639386e8843d" name="a22c1e68f4a5979633a3f639386e8843d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22c1e68f4a5979633a3f639386e8843d">&#9670;&nbsp;</a></span>ApplyStep()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -474,6 +474,12 @@ Private Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype">PipelineResults&#160;</td>
           <td class="paramname"><em>results</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Action&lt; string &gt;&#160;</td>
+          <td class="paramname"><em>logger</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -501,6 +507,7 @@ Private Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">results</td><td>The generation pipeline results to which artifacts will be added.</td></tr>
+    <tr><td class="paramname">logger</td><td>The logging action. Ignored if null.</td></tr>
     <tr><td class="paramname">cancellationToken</td><td>The cancellation token.</td></tr>
   </table>
   </dd>
@@ -542,7 +549,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00252">252</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00253">253</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -571,12 +578,12 @@ Private Attributes</h2></td></tr>
 
 <p>Returns a list of goal positions that have an empty neighboring tile. </p>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00148">148</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00149">149</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
-<a id="a674f95bc6c930a92262b3b68d68ccc75" name="a674f95bc6c930a92262b3b68d68ccc75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a674f95bc6c930a92262b3b68d68ccc75">&#9670;&nbsp;</a></span>GenerateLayout()</h2>
+<a id="acefcbc12d03c1ed62b0188b5e9b55d56" name="acefcbc12d03c1ed62b0188b5e9b55d56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acefcbc12d03c1ed62b0188b5e9b55d56">&#9670;&nbsp;</a></span>GenerateLayout()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -591,7 +598,13 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_move_generator.html#af6bc18179518d86be4bc35a7568e906c">RandomSeed</a>&#160;</td>
-          <td class="paramname"><em>randomSeed</em>&#160;</td>
+          <td class="paramname"><em>randomSeed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Action&lt; string &gt;&#160;</td>
+          <td class="paramname"><em>logger</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -606,11 +619,12 @@ Private Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">tiles</td><td>The puzzle area tiles. These tiles should contain at least one goal.</td></tr>
     <tr><td class="paramname">randomSeed</td><td>The random seed.</td></tr>
+    <tr><td class="paramname">logger</td><td>The logging action.</td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00121">121</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00122">122</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -657,7 +671,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00346">346</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00347">347</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -686,7 +700,7 @@ Private Attributes</h2></td></tr>
 
 <p>Shuffles the offsets array an returns it. </p>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00326">326</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00327">327</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -715,7 +729,7 @@ Private Attributes</h2></td></tr>
 
 <p>Shuffles the push blocks array and returns it. </p>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00335">335</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00336">336</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -762,7 +776,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00408">408</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00409">409</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -809,7 +823,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00398">398</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00399">399</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -845,7 +859,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00388">388</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00389">389</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -881,7 +895,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00292">292</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00293">293</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -917,7 +931,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00080">80</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00079">79</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -964,7 +978,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00312">312</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00313">313</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -1000,7 +1014,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00242">242</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00243">243</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -1036,7 +1050,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00232">232</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00233">233</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -1083,7 +1097,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00264">264</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00265">265</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -1130,7 +1144,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00277">277</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00278">278</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -1155,7 +1169,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00024">24</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00023">23</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -1179,7 +1193,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00018">18</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00017">17</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -1206,7 +1220,7 @@ Private Attributes</h2></td></tr>
 
 <p>The current puzzle layout. </p>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00049">49</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00048">48</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -1232,7 +1246,7 @@ Private Attributes</h2></td></tr>
 
 <p>The maximum number of iterations attempted should the generator initially fail. </p>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00039">39</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00038">38</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -1258,7 +1272,7 @@ Private Attributes</h2></td></tr>
 
 <p>An array of directional offsets. </p>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00054">54</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00053">53</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -1284,7 +1298,7 @@ Private Attributes</h2></td></tr>
 
 <p>If true, the generator will prevent moves where the push block moves in the opposite direction of its last move. </p>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00034">34</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00033">33</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -1310,7 +1324,7 @@ Private Attributes</h2></td></tr>
 
 <p>The number of push blocks to generate moves for. </p>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00028">28</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00027">27</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -1336,7 +1350,7 @@ Private Attributes</h2></td></tr>
 
 <p>An array of push block indexes. </p>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00059">59</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00058">58</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -1362,7 +1376,7 @@ Private Attributes</h2></td></tr>
 
 <p>The random seed. </p>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00044">44</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00043">43</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>
@@ -1388,7 +1402,7 @@ Private Attributes</h2></td></tr>
 
 <p>The target number of moves between all push blocks. </p>
 
-<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00022">22</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_puzzle_move_generator_8cs_source.html#l00021">21</a> of file <a class="el" href="_puzzle_move_generator_8cs_source.html">PuzzleMoveGenerator.cs</a>.</p>
 
 </div>
 </div>

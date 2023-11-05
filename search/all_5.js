@@ -1,9 +1,9 @@
 var searchData=
 [
   ['garbage_0',['Garbage',['../namespace_m_pewsey_1_1_aycblok.html#abf3803592e3f896973e7a3f248b70097a8c97626c3bda0721059f5eddbd2d255d',1,'MPewsey::Aycblok']]],
-  ['generategarbage_1',['GenerateGarbage',['../class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_garbage_generator.html#acda485b65db74c65a493d9d288a9d960',1,'MPewsey::Aycblok::Generators::PuzzleGarbageGenerator']]],
-  ['generategoal_2',['GenerateGoal',['../class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_goal_generator.html#a024e4c64ee68fe694b7fbc010e33fc3e',1,'MPewsey::Aycblok::Generators::PuzzleGoalGenerator']]],
-  ['generatelayout_3',['GenerateLayout',['../class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_move_generator.html#a674f95bc6c930a92262b3b68d68ccc75',1,'MPewsey::Aycblok::Generators::PuzzleMoveGenerator']]],
+  ['generategarbage_1',['GenerateGarbage',['../class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_garbage_generator.html#afb82a69aaa41e8bc794743fd71ce9d0c',1,'MPewsey::Aycblok::Generators::PuzzleGarbageGenerator']]],
+  ['generategoal_2',['GenerateGoal',['../class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_goal_generator.html#ade55bc337ad42d64af0bdaa6f7d42a6a',1,'MPewsey::Aycblok::Generators::PuzzleGoalGenerator']]],
+  ['generatelayout_3',['GenerateLayout',['../class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_move_generator.html#acefcbc12d03c1ed62b0188b5e9b55d56',1,'MPewsey::Aycblok::Generators::PuzzleMoveGenerator']]],
   ['getfrompositions_4',['GetFromPositions',['../class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_move_generator.html#a4b99e69811ee35f9a404157df3b2bf6b',1,'MPewsey::Aycblok::Generators::PuzzleMoveGenerator']]],
   ['getmarkedtiles_5',['GetMarkedTiles',['../class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_garbage_generator.html#a38e033647e725bae7f676c41f3689eba',1,'MPewsey::Aycblok::Generators::PuzzleGarbageGenerator']]],
   ['getrandomblock_6',['GetRandomBlock',['../class_m_pewsey_1_1_aycblok_1_1_generators_1_1_puzzle_garbage_generator.html#a80be148856f5c269855ae6437ce2e6cf',1,'MPewsey::Aycblok::Generators::PuzzleGarbageGenerator']]],
