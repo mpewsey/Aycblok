@@ -12,6 +12,18 @@ namespace MPewsey.Aycblok
     public static class PuzzleBoard
     {
         /// <summary>
+        /// A delegate converting a PuzzleTile to a character.
+        /// </summary>
+        /// <param name="tile">The input puzzle tile.</param>
+        public delegate char TileToCharacterDelegate(PuzzleTile tile);
+
+        /// <summary>
+        /// A delegate converting a character to a PuzzleTile.
+        /// </summary>
+        /// <param name="character">The input character.</param>
+        public delegate PuzzleTile CharacterToTileDelegate(char character);
+
+        /// <summary>
         /// The character to tile dictionary.
         /// </summary>
         private static Dictionary<char, PuzzleTile> CharacterToTileDictionary { get; } = DefaultCharacterToTileDictionary();
@@ -64,7 +76,7 @@ namespace MPewsey.Aycblok
         /// <param name="tiles">A list of move puzzle boards.</param>
         /// <param name="columns">The number of columns in the layout.</param>
         /// <param name="tileToCharacter">A function converting a tile to a character. If null, the default delegate will be used.</param>
-        public static string TilesToTiledString(IList<Array2D<PuzzleTile>> tiles, int columns, Func<PuzzleTile, char> tileToCharacter = null)
+        public static string TilesToTiledString(IList<Array2D<PuzzleTile>> tiles, int columns, TileToCharacterDelegate tileToCharacter = null)
         {
             if (tiles.Count == 0)
                 return string.Empty;
@@ -135,7 +147,7 @@ namespace MPewsey.Aycblok
         /// <param name="tiles">The puzzle board tiles.</param>
         /// <param name="builder">The string builder.</param>
         /// <param name="tileToCharacter">A function converting a tile to a character. If null, the default delegate will be used.</param>
-        public static void AppendTilesToString(Array2D<PuzzleTile> tiles, StringBuilder builder, Func<PuzzleTile, char> tileToCharacter = null)
+        public static void AppendTilesToString(Array2D<PuzzleTile> tiles, StringBuilder builder, TileToCharacterDelegate tileToCharacter = null)
         {
             tileToCharacter = tileToCharacter ?? TileToCharacter;
 
@@ -156,7 +168,7 @@ namespace MPewsey.Aycblok
         /// <param name="lines">A list of puzzle board line strings.</param>
         /// <param name="characterToTile">A function converting a character to a tile. If null, the default delegate will be used.</param>
         /// <exception cref="ArgumentException">Raised if the puzzle board line strings do not all have equal length.</exception>
-        public static Array2D<PuzzleTile> StringsToTiles(IList<string> lines, Func<char, PuzzleTile> characterToTile = null)
+        public static Array2D<PuzzleTile> StringsToTiles(IList<string> lines, CharacterToTileDelegate characterToTile = null)
         {
             if (lines.Count == 0 || lines[0].Length == 0)
                 return new Array2D<PuzzleTile>();
