@@ -6,9 +6,10 @@ var searchData=
   ['tiledmovereport_3',['TiledMoveReport',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_layout.html#a41dd80a0d14be3ab695631cfc95f6e68',1,'MPewsey::Aycblok::PuzzleLayout']]],
   ['tiles_4',['Tiles',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_layout.html#a48bee1f2c1b37f04eba0b02a305c43d7',1,'MPewsey::Aycblok::PuzzleLayout']]],
   ['tilestostring_5',['TilesToString',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#a840083030acf9c06ceee5ffbc0a00e63',1,'MPewsey::Aycblok::PuzzleBoard']]],
-  ['tilestotiledstring_6',['TilesToTiledString',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#a97fdd03fb77784e56e7a83dbe24d3aaa',1,'MPewsey::Aycblok::PuzzleBoard']]],
+  ['tilestotiledstring_6',['TilesToTiledString',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#ada754a7eb213b4f250764f0df960f5a2',1,'MPewsey::Aycblok::PuzzleBoard']]],
   ['tiletocharacter_7',['TileToCharacter',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#a7c61ade07560fc3b95d2a6ec9e489793',1,'MPewsey::Aycblok::PuzzleBoard']]],
-  ['tiletocharacterdictionary_8',['TileToCharacterDictionary',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#acac587e51227fee380edf57c58db4115',1,'MPewsey::Aycblok::PuzzleBoard']]],
-  ['toposition_9',['ToPosition',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_move.html#a903e6551291af0f5ea237019d51a90d3',1,'MPewsey::Aycblok::PuzzleMove']]],
-  ['tostring_10',['ToString',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_layout.html#a540e6a1bbbf914890fc859319aad419c',1,'MPewsey.Aycblok.PuzzleLayout.ToString()'],['../class_m_pewsey_1_1_aycblok_1_1_puzzle_move.html#a59d1c79f88de931600b127c672bef5d1',1,'MPewsey.Aycblok.PuzzleMove.ToString()'],['../struct_m_pewsey_1_1_aycblok_1_1_raycast_hit.html#ae28857a6d3018194c8bcb1887343e7ab',1,'MPewsey.Aycblok.RaycastHit.ToString()']]]
+  ['tiletocharacterdelegate_8',['TileToCharacterDelegate',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#a22a8f74fba8ad3483b3fe2e34d600c22',1,'MPewsey::Aycblok::PuzzleBoard']]],
+  ['tiletocharacterdictionary_9',['TileToCharacterDictionary',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_board.html#acac587e51227fee380edf57c58db4115',1,'MPewsey::Aycblok::PuzzleBoard']]],
+  ['toposition_10',['ToPosition',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_move.html#a903e6551291af0f5ea237019d51a90d3',1,'MPewsey::Aycblok::PuzzleMove']]],
+  ['tostring_11',['ToString',['../class_m_pewsey_1_1_aycblok_1_1_puzzle_layout.html#a540e6a1bbbf914890fc859319aad419c',1,'MPewsey.Aycblok.PuzzleLayout.ToString()'],['../class_m_pewsey_1_1_aycblok_1_1_puzzle_move.html#a59d1c79f88de931600b127c672bef5d1',1,'MPewsey.Aycblok.PuzzleMove.ToString()'],['../struct_m_pewsey_1_1_aycblok_1_1_raycast_hit.html#ae28857a6d3018194c8bcb1887343e7ab',1,'MPewsey.Aycblok.RaycastHit.ToString()']]]
 ];

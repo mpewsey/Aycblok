@@ -53,7 +53,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_constants_8cs_source.html"
+"_constants_8cs_source.html",
+"struct_m_pewsey_1_1_aycblok_1_1_raycast_hit.html#af3b6e5c275b5cb2544a08b434ec8bcf3"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
