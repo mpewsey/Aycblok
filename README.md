@@ -46,8 +46,7 @@ Move 3:              Move 4:              Move 5:
 * Support of area obstacles such a holes by means of void tiles, which disallow traversal of a tile by the player, the push blocks, or both.
 * Includes a random garbage block generator to clutter the area and make the solution less obvious.
 * Customizable parameters for generation steps to help adjust the feel and difficulty of puzzles.
-* Serialization of results to JSON and XML.
-* Works with Windows, Mac, and Linux.
+* Persistence of results through JSON and XML via Data Contract serialization.
 
 ## Generation Pipeline Example
 
@@ -55,7 +54,7 @@ The generation pipeline provides a way for multiple generation steps to be chain
 
 ```GenerationPipeline.cs
 // Create a dictionary of arguments to be passed to each pipeline step.
-var args = new Dictionary<string, object>
+var inputs = new Dictionary<string, object>
 {
     { "PuzzleArea", new Array2D<PuzzleTile>(20, 20) },
     { "RandomSeed", new RandomSeed(12345) },
@@ -69,6 +68,6 @@ var pipeline = new Pipeline(
 );
 
 // Run the pipeline and retrieve an output
-var results = pipeline.Run(args);
+var results = pipeline.Run(inputs);
 var layout = results.GetOutput<PuzzleLayout>("PuzzleLayout");
 ```
